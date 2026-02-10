@@ -1,9 +1,6 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import { useSearchParams } from 'next/navigation';
 
 const medicineData = {
   1: {
@@ -122,37 +119,22 @@ const medicineData = {
   }
 };
 
-export default function MedicineDetail() {
-  const [medicine, setMedicine] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
-  const searchParams = useSearchParams();
+export async function generateStaticParams() {
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+    { id: '4' },
+    { id: '5' },
+    { id: '6' },
+  ];
+}
+
+export default function MedicineDetail({ params }: { params: { id: string } }) {
+  // Get the ID from URL params
+  const id = params.id;
   
-  useEffect(() => {
-    // Get the ID from the URL path
-    const pathParts = window.location.pathname.split('/');
-    const id = pathParts[pathParts.length - 1];
-    const medicineId = parseInt(id, 10);
-    
-    const foundMedicine = medicineData[medicineId as keyof typeof medicineData];
-    setMedicine(foundMedicine);
-    setLoading(false);
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-white">
-        <Navbar />
-        <div className="flex items-center justify-center min-h-screen">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold text-gray-900 mb-4">Loading...</h1>
-          </div>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
-
-  if (!medicine) {
+  if (!id) {
     return (
       <div className="min-h-screen bg-white">
         <Navbar />
@@ -169,6 +151,9 @@ export default function MedicineDetail() {
       </div>
     );
   }
+  
+  const medicineId = parseInt(Array.isArray(id) ? id[0] : id, 10);
+  const foundMedicine = medicineData[medicineId as keyof typeof medicineData];
 
   return (
     <div className="min-h-screen bg-white">
@@ -178,8 +163,8 @@ export default function MedicineDetail() {
         <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">{medicine.name}</h1>
-              <p className="text-xl text-blue-100">{medicine.category}</p>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">{foundMedicine.name}</h1>
+              <p className="text-xl text-blue-100">{foundMedicine.category}</p>
             </div>
           </div>
         </section>
@@ -192,22 +177,22 @@ export default function MedicineDetail() {
                   <div className="text-center">
                     <div className="w-32 h-32 bg-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
                       <svg className="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                       </svg>
                     </div>
-                    <p className="text-blue-600 font-medium text-lg">{medicine.name}</p>
+                    <p className="text-blue-600 font-medium text-lg">{foundMedicine.name}</p>
                     <p className="text-blue-500 text-sm mt-2">Medicine Image</p>
                   </div>
                 </div>
               </div>
               
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">{medicine.name}</h2>
-                <p className="text-lg text-gray-600 mb-6">{medicine.fullDescription}</p>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">{foundMedicine.name}</h2>
+                <p className="text-lg text-gray-600 mb-6">{foundMedicine.fullDescription}</p>
                 
                 <div className="bg-blue-50 rounded-lg p-6 mb-6">
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-2xl font-bold text-blue-600">{medicine.price}</span>
+                    <span className="text-2xl font-bold text-blue-600">{foundMedicine.price}</span>
                     <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
                       In Stock
                     </span>
@@ -216,7 +201,7 @@ export default function MedicineDetail() {
                     <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    Dosage: {medicine.dosage}
+                    Dosage: {foundMedicine.dosage}
                   </div>
                 </div>
                 
@@ -227,7 +212,7 @@ export default function MedicineDetail() {
               <div className="bg-white border border-gray-200 rounded-lg p-6">
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">Key Ingredients</h3>
                 <ul className="space-y-2">
-                  {medicine.ingredients.map((ingredient: string, index: number) => (
+                  {foundMedicine.ingredients.map((ingredient: string, index: number) => (
                     <li key={index} className="flex items-center text-gray-600">
                       <svg className="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -241,7 +226,7 @@ export default function MedicineDetail() {
               <div className="bg-white border border-gray-200 rounded-lg p-6">
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">Benefits</h3>
                 <ul className="space-y-2">
-                  {medicine.benefits.map((benefit: string, index: number) => (
+                  {foundMedicine.benefits.map((benefit: string, index: number) => (
                     <li key={index} className="flex items-center text-gray-600">
                       <svg className="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -258,7 +243,7 @@ export default function MedicineDetail() {
                   <div>
                     <h4 className="font-medium text-gray-900 mb-1">Side Effects:</h4>
                     <ul className="text-sm text-gray-600 space-y-1">
-                      {medicine.sideEffects.map((effect: string, index: number) => (
+                      {foundMedicine.sideEffects.map((effect: string, index: number) => (
                         <li key={index}>• {effect}</li>
                       ))}
                     </ul>
@@ -266,7 +251,7 @@ export default function MedicineDetail() {
                   <div>
                     <h4 className="font-medium text-gray-900 mb-1">Warnings:</h4>
                     <ul className="text-sm text-gray-600 space-y-1">
-                      {medicine.warnings.map((warning: string, index: number) => (
+                      {foundMedicine.warnings.map((warning: string, index: number) => (
                         <li key={index}>• {warning}</li>
                       ))}
                     </ul>
