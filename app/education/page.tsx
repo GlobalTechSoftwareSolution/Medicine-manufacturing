@@ -245,13 +245,22 @@ export default function Education() {
       <main>
         {/* Hero Section */}
         <motion.section 
-          className="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-16"
+          className="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-12 sm:py-16 md:py-20 relative overflow-hidden min-h-[250px] sm:min-h-[300px] md:min-h-[350px]"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
+          {/* Background Image */}
+          <div className="absolute inset-0 opacity-20">
+            <img 
+              src="/desease.png" 
+              alt="Disease Education Background" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex items-center">
+            <div className="text-center w-full">
               <motion.h1 
                 className="text-3xl md:text-4xl font-bold mb-4"
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -261,7 +270,7 @@ export default function Education() {
                 Disease Education
               </motion.h1>
               <motion.p 
-                className="text-lg text-blue-100 max-w-3xl mx-auto"
+                className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}

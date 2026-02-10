@@ -118,12 +118,14 @@ export default function ProductsPage() {
       {/* Products Overview Section */}
       <div className="relative bg-gray-100 py-16 overflow-hidden">
         <div className="absolute inset-0 opacity-50">
-          <Image 
+          <img 
             src="/product.png" 
             alt="NR Medicare Products" 
-            fill
-            className="object-cover"
-            priority
+            className="absolute inset-0 w-full h-full object-cover opacity-80"
+            onLoad={() => {
+              // Force cache refresh
+              console.log('Product image loaded');
+            }}
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

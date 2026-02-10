@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
@@ -328,18 +329,18 @@ export default function IndividualEducationPage() {
               Comprehensive Medical Knowledge Base
             </motion.p>
             <motion.div 
-              className="w-16 h-16 mx-auto mb-8 bg-white rounded-lg shadow-lg p-4 flex items-center justify-center"
+              className="w-32 h-32 mx-auto mb-8 rounded-lg shadow-lg overflow-hidden"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <motion.span 
-                className="text-4xl"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                📚
-              </motion.span>
+              <Image
+                src="/desease.png"
+                alt="Disease Information"
+                width={128}
+                height={128}
+                className="w-full h-full object-cover"
+              />
             </motion.div>
           </div>
         </div>
