@@ -68,15 +68,6 @@ export default function MontinorLcPage() {
                     </ul>
                   </div>
 
-                  <div>
-                    <h3 className="text-lg font-semibold text-green-600 mb-2">Dosage & Administration</h3>
-                    <div className="text-gray-700 space-y-2">
-                      <p><strong>Adults & Adolescents (15+ years):</strong> 1 tablet once daily in the evening</p>
-                      <p><strong>Children (6-14 years):</strong> Age-appropriate dosage as prescribed</p>
-                      <p><strong>Administration:</strong> Oral, can be taken with or without food</p>
-                      <p><strong>Timing:</strong> Preferably in the evening for optimal efficacy</p>
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -134,9 +125,9 @@ export default function MontinorLcPage() {
               <div className="bg-purple-50 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-purple-800 mb-4">Quality Assurance</h3>
                 <div className="text-gray-700 space-y-2">
-                  <p><strong>Manufacturing:</strong> WHO-GMP certified facility</p>
+                  <p><strong>Marketing:</strong> WHO-GMP certified facility</p>
                   <p><strong>Quality Control:</strong> Batch-to-batch consistency testing</p>
-                  <p><strong>Stability:</strong> 24-month shelf life from manufacturing date</p>
+                  <p><strong>Stability:</strong> 24-month shelf life from marketing date</p>
                   <p><strong>Regulatory:</strong> Approved by national drug authorities</p>
                 </div>
               </div>

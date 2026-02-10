@@ -9,7 +9,7 @@ export default function Footer() {
             <h3 className="text-2xl font-bold text-blue-400 mb-4">NR Medicare</h3>
             <p className="text-gray-400">&copy; {new Date().getFullYear()} NR Medicare. All rights reserved.</p>
             <p className="text-gray-300 mb-4">
-              Leading the pharmaceutical industry with innovative medicine manufacturing solutions, 
+              Leading the pharmaceutical industry with innovative medicine marketing solutions, 
               committed to quality, safety, and patient well-being.
             </p>
             <div className="flex justify-center md:justify-start space-x-4">
@@ -55,13 +55,19 @@ export default function Footer() {
                 <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                +91 96663664548
+                +91 9663664548
+              </li>
+              <li className="flex items-center justify-center md:justify-start">
+                <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                +91 9480090238
               </li>
               <li className="flex items-center justify-center md:justify-start">
                 <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                info@nrmedicare@gmail.com
+                nagendra0297@gmail.com
               </li>
             </ul>
           </div>

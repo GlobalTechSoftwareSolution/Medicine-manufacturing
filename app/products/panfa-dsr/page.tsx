@@ -69,10 +69,8 @@ export default function PanfaDsrPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-semibold text-orange-600 mb-2">Dosage & Administration</h3>
+                    <h3 className="text-lg font-semibold text-orange-600 mb-2">Administration</h3>
                     <div className="text-gray-700 space-y-2">
-                      <p><strong>Adults:</strong> 1 capsule once daily before breakfast</p>
-                      <p><strong>Duration:</strong> Usually 4-8 weeks, may extend to 12 weeks</p>
                       <p><strong>Administration:</strong> Oral, swallow whole with water</p>
                       <p><strong>Timing:</strong> 30 minutes before meals</p>
                     </div>

@@ -69,10 +69,8 @@ export default function Agumed625Page() {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-semibold text-red-600 mb-2">Dosage & Administration</h3>
+                    <h3 className="text-lg font-semibold text-red-600 mb-2">Administration</h3>
                     <div className="text-gray-700 space-y-2">
-                      <p><strong>Adults:</strong> 1 tablet every 8 hours (twice daily)</p>
-                      <p><strong>Severe infections:</strong> 1 tablet every 6 hours</p>
                       <p><strong>Administration:</strong> Oral with water, preferably with meals</p>
                       <p><strong>Duration:</strong> Usually 5-14 days depending on infection</p>
                     </div>
@@ -130,9 +128,9 @@ export default function Agumed625Page() {
               <div className="bg-purple-50 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-purple-800 mb-4">Quality Assurance</h3>
                 <div className="text-gray-700 space-y-2">
-                  <p><strong>Manufacturing:</strong> WHO-GMP certified facility</p>
+                  <p><strong>Marketing:</strong> WHO-GMP certified facility</p>
                   <p><strong>Quality Control:</strong> Batch-to-batch consistency testing</p>
-                  <p><strong>Stability:</strong> 24-month shelf life from manufacturing date</p>
+                  <p><strong>Stability:</strong> 24-month shelf life from marketing date</p>
                   <p><strong>Regulatory:</strong> Approved by national drug authorities</p>
                 </div>
               </div>

@@ -30,10 +30,10 @@ export default function Home() {
 
       // Website information responses
       if (lowerMessage.includes('about') || lowerMessage.includes('company') || lowerMessage.includes('who are you')) {
-        botResponse = 'NR Medicare is a leading pharmaceutical manufacturing company committed to delivering high-quality, affordable medicines with global standards. We specialize in pharmaceutical formulations and serve 50+ countries worldwide.';
+        botResponse = 'NR Medicare is a leading pharmaceutical marketing company based in Karnataka, committed to delivering high-quality, affordable medicines with international standards. We specialize in pharmaceutical formulations and serve customers across Karnataka and other states in India.';
       }
       else if (lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('call')) {
-        botResponse = '📞 Contact Information:\n• Phone: +91 9663664548\n• Email: infotechnrmedicare@gmail.com\n• Address: No 36, 1st Floor, Giridhama Layout, Rajarajeshwarinagar, Bangalore – 560098\n• Business Hours: Mon-Fri 9AM-6PM, Sat 10AM-2PM';
+        botResponse = '📞 Contact Information:\n• Phone: +91 9663664548\n• Phone: +91 9480090238\n• Email: nagendra0297@gmail.com\n• Address: No 36, 1st Floor, Giridhama Layout, Rajarajeshwarinagar, Bangalore – 560098\n• Business Hours: Mon-Fri 9AM-6PM, Sat 10AM-2PM';
       }
       else if (lowerMessage.includes('product') || lowerMessage.includes('medicine') || lowerMessage.includes('drug')) {
         botResponse = '💊 Our Products:\n• PARANAC-PLUS (Pain relief)\n• MONTORIN-LC (Asthma/Allergy)\n• PARANAC-SP (Muscle spasms)\n• PANFA-DSR (GERD/Acid reflux)\n• AGUMED-625 (Antibiotic)\n• PARANAC-MR (Chronic pain)\n• NR NANO-GEL (Topical pain)\n• ITRODERM-PLUS (Skin conditions)';
@@ -42,7 +42,7 @@ export default function Home() {
         botResponse = '🏆 Quality Excellence:\nNR Medicare maintains the highest quality standards with USFDA, EDQM, and WHO-GMP certified manufacturing facilities. We have 99% quality success rate and 1000+ research projects completed.';
       }
       else if (lowerMessage.includes('career') || lowerMessage.includes('job') || lowerMessage.includes('work')) {
-        botResponse = '💼 Careers:\nWe are always looking for talented professionals to join our team. Send your resume to infotechnrmedicare@gmail.com for career opportunities at NR Medicare.';
+        botResponse = '💼 Careers:\nWe are always looking for talented professionals to join our team. Send your resume to nagendra0297@gmail.com for career opportunities at NR Medicare.';
       }
       else if (lowerMessage.includes('innovation') || lowerMessage.includes('research') || lowerMessage.includes('r&d')) {
         botResponse = '🔬 Innovation:\nNR Medicare invests heavily in research and development with advanced R&D facilities. We focus on breakthrough technologies and innovative pharmaceutical formulations to meet evolving healthcare needs.';
@@ -51,16 +51,16 @@ export default function Home() {
         botResponse = '📚 Individual Education:\nWe provide educational programs and training for healthcare professionals and individuals interested in pharmaceutical sciences. Contact us for more information about our educational initiatives.';
       }
       else if (lowerMessage.includes('order') || lowerMessage.includes('purchase') || lowerMessage.includes('buy')) {
-        botResponse = '📦 Ordering:\nTo place orders or inquire about pricing, please contact our sales team:\n• Phone: +91 9663664548\n• Email: infotechnrmedicare@gmail.com\nWe offer competitive pricing for bulk orders.';
+        botResponse = '📦 Ordering:\nTo place orders or inquire about pricing, please contact our sales team:\n• Phone: +91 9663664548\n• Email: nagendra0297@gmail.com\nWe offer competitive pricing for bulk orders.';
       }
       else if (lowerMessage.includes('website') || lowerMessage.includes('details') || lowerMessage.includes('all') || lowerMessage.includes('everything')) {
-        botResponse = '🌐 NR Medicare Complete Information:\n\n🏢 Company: Leading pharmaceutical manufacturer\n📍 Location: Bangalore, India\n📞 Contact: +91 9663664548\n📧 Email: infotechnrmedicare@gmail.com\n\n💊 Products: 8+ pharmaceutical formulations\n🌍 Reach: 50+ countries served\n🏆 Quality: USFDA, EDQM, WHO-GMP certified\n📊 Experience: 25+ years\n🔬 Research: 1000+ projects\n✅ Success: 99% quality rate\n\n📞 For orders: Call +91 9663664548\n💼 For careers: Email infotechnrmedicare@gmail.com';
+        botResponse = '🌐 NR Medicare Complete Information:\n\n🏢 Company: Leading pharmaceutical manufacturer\n📍 Location: Bangalore, India\n📞 Contact: +91 9663664548\n📧 Email: nagendra0297@gmail.com\n\n💊 Products: 8+ pharmaceutical formulations\n🌍 Reach: 50+ countries served\n🏆 Quality: USFDA, EDQM, WHO-GMP certified\n📊 Experience: 25+ years\n🔬 Research: 1000+ projects\n✅ Success: 99% quality rate\n\n📞 For orders: Call +91 9663664548\n💼 For careers: Email nagendra0297@gmail.com';
       }
       else if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
         botResponse = 'Hello! Welcome to NR Medicare! 👋\n\nI can help you with information about:\n• Our products and medicines\n• Company details and contact info\n• Quality certifications\n• Career opportunities\n• Ordering information\n• And much more!\n\nWhat would you like to know?';
       }
       else {
-        botResponse = 'Thank you for your message! Our team will get back to you soon. For urgent queries, please call us at +91 9663664548 or email infotechnrmedicare@gmail.com. Is there anything specific about NR Medicare I can help you with?';
+        botResponse = 'Thank you for your message! Our team will get back to you soon. For urgent queries, please call us at +91 9663664548 or email nagendra0297@gmail.com. Is there anything specific about NR Medicare I can help you with?';
       }
 
       // Add bot response after a short delay
@@ -79,15 +79,6 @@ export default function Home() {
     }
   };
 
-  // Auto-slide images every 6 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % 4);
-    }, 6000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   const images = [
     { src: '/home.png', title: 'Quality Healthcare', subtitle: 'Delivering excellence in pharmaceutical manufacturing' },
     { src: '/home2.jpg', title: 'Global Reach', subtitle: 'Serving patients worldwide with innovative solutions' },
@@ -102,6 +93,15 @@ export default function Home() {
   const prevImage = () => {
     setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
   };
+
+  // Auto-slide images every 6 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextImage();
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   // Animation variants
   const backgroundImageVariants = {
@@ -138,7 +138,7 @@ export default function Home() {
         </a>
         
         {/* Chat Box */}
-        <div className={`${isChatOpen ? 'w-72 sm:w-80 h-auto rounded-lg' : 'w-10 h-10 sm:w-12 sm:h-12 rounded-full'} bg-black shadow-2xl p-3 sm:p-4 flex items-center justify-center transition-all duration-300`}>
+        <div className={`${isChatOpen ? 'w-72 sm:w-80 h-auto rounded-lg' : 'w-10 h-10 sm:w-12 sm:h-12 rounded-full'} bg-black shadow-2xl p-3 sm:p-4 flex items-center justify-center transition-all duration-300 cursor-pointer`}>
           <svg 
             className={`w-5 h-5 sm:w-6 sm:h-6 text-white ${isChatOpen ? 'hidden' : 'block'}`} 
             fill="none" 
@@ -155,7 +155,7 @@ export default function Home() {
               <div className="flex items-center justify-between mb-3">
                 <h3 className="font-semibold text-white text-sm sm:text-base">Chat with us</h3>
                 <button 
-                  className="text-gray-400 hover:text-white"
+                  className="text-gray-400 hover:text-white cursor-pointer"
                   onClick={() => setIsChatOpen(false)}
                 >
                   <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -187,7 +187,7 @@ export default function Home() {
                 />
                 <button
                   onClick={handleSendMessage}
-                  className="bg-blue-600 text-white p-1 sm:p-2 rounded hover:bg-blue-700 transition-colors"
+                  className="bg-blue-600 text-white p-1 sm:p-2 rounded hover:bg-blue-700 transition-colors cursor-pointer"
                 >
                   <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -238,50 +238,44 @@ export default function Home() {
                     NR Medicare
                   </motion.h1>
                   <motion.p 
-                    className="text-xl md:text-2xl mb-12 text-black font-sans font-medium leading-relaxed"
+                    className="text-xl md:text-2xl mb-12 text-white font-sans font-medium leading-relaxed"
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, delay: 0.8 }}
                   >
-                    NR Medicare is a pharmaceutical manufacturing company committed to delivering high-quality, affordable medicines. We focus on quality, compliance, and innovation to meet healthcare needs.
+                    NR Medicare is a pharmaceutical marketing company committed to delivering high-quality, affordable medicines. We focus on quality, compliance, and innovation to meet healthcare needs.
                   </motion.p>
                 </div>
               </div>
             </div>
           </div>
-          
-          {/* Desktop Image Navigation Controls */}
-          <div className="absolute inset-0 flex items-center justify-between px-4 sm:px-6 lg:px-8 pointer-events-none hidden lg:flex">
-            <motion.button
-              onClick={prevImage}
-              className="pointer-events-auto bg-black bg-opacity-80 hover:bg-opacity-100 text-white p-3 rounded-full shadow-lg transition-all duration-200"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </motion.button>
-            
-            <motion.button
+          <motion.button
+            onClick={prevImage}
+            className="pointer-events-auto bg-white bg-opacity-20 hover:bg-opacity-30 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-200"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7" />
+            </svg>
+          </motion.button>
+          <motion.button
               onClick={nextImage}
-              className="pointer-events-auto bg-black bg-opacity-80 hover:bg-opacity-100 text-white p-3 rounded-full shadow-lg transition-all duration-200"
+              className="pointer-events-auto bg-white bg-opacity-20 hover:bg-opacity-30 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-200 cursor-pointer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7" />
               </svg>
             </motion.button>
-          </div>
-          
           {/* Desktop Image Indicators */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 hidden lg:flex">
             {images.map((_, index) => (
               <motion.button
                 key={index}
                 onClick={() => setCurrentImage(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                className={`w-3 h-3 rounded-full transition-all duration-200 cursor-pointer ${
                   index === currentImage 
                     ? 'bg-black w-12' 
                     : 'bg-black bg-opacity-50 hover:bg-opacity-75'
@@ -341,7 +335,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-green-600 mb-2">Innovation</h3>
-                <p className="text-gray-600">Cutting-edge research and development in healthcare</p>
+                <p className="text-white">Cutting-edge research and development in healthcare</p>
               </div>
               
               <div className="text-center bg-white p-8 rounded-lg shadow-md">
@@ -393,13 +387,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={() => window.location.href = '/products'}
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold shadow-lg transition-all duration-200 hover:scale-105"
+                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold shadow-lg transition-all duration-200 hover:scale-105 cursor-pointer"
               >
                 Learn more
               </button>
               <button 
                 onClick={() => window.location.href = '/contact'}
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition-all duration-200"
+                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer"
               >
                 Contact us
               </button>

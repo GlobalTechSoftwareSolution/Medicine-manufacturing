@@ -69,13 +69,8 @@ export default function ItrodermPlusPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-semibold text-pink-600 mb-2">Dosage & Administration</h3>
-                    <div className="text-gray-700 space-y-2">
-                      <p><strong>Application:</strong> Apply thin layer to affected area</p>
-                      <p><strong>Frequency:</strong> 2-3 times daily or as directed</p>
-                      <p><strong>Area:</strong> Clean and dry affected area before application</p>
-                      <p><strong>Duration:</strong> Continue treatment for 7-14 days</p>
-                    </div>
+                    <h3 className="text-lg font-semibold text-pink-600 mb-2">Area</h3>
+                    <p><strong>Area:</strong> Clean and dry affected area before application</p>
                   </div>
                 </div>
               </div>
@@ -130,9 +125,9 @@ export default function ItrodermPlusPage() {
               <div className="bg-purple-50 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-purple-800 mb-4">Quality Assurance</h3>
                 <div className="text-gray-700 space-y-2">
-                  <p><strong>Manufacturing:</strong> WHO-GMP certified facility</p>
+                  <p><strong>Marketing:</strong> WHO-GMP certified facility</p>
                   <p><strong>Quality Control:</strong> Batch-to-batch consistency testing</p>
-                  <p><strong>Stability:</strong> 24-month shelf life from manufacturing date</p>
+                  <p><strong>Stability:</strong> 24-month shelf life from marketing date</p>
                   <p><strong>Regulatory:</strong> Approved by national drug authorities</p>
                 </div>
               </div>

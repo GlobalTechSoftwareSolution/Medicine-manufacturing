@@ -69,10 +69,8 @@ export default function ParanacMrPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-semibold text-yellow-600 mb-2">Dosage & Administration</h3>
+                    <h3 className="text-lg font-semibold text-yellow-600 mb-2">Administration</h3>
                     <div className="text-gray-700 space-y-2">
-                      <p><strong>Adults:</strong> 1 tablet every 12 hours (twice daily)</p>
-                      <p><strong>Maximum:</strong> 2 tablets in 24 hours</p>
                       <p><strong>Administration:</strong> Oral with water, do not crush or chew</p>
                       <p><strong>Timing:</strong> Maintain consistent 12-hour intervals</p>
                     </div>

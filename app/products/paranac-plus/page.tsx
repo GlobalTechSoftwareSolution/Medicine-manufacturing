@@ -65,19 +65,11 @@ export default function ParanacPlusPage() {
                       <li>Headache and migraine relief</li>
                       <li>Menstrual pain management</li>
                       <li>Muscle aches and joint pain</li>
+                      <li>Added new indication</li>
                     </ul>
                   </div>
 
-                  <div>
-                    <h3 className="text-lg font-semibold text-blue-600 mb-2">Dosage & Administration</h3>
-                    <div className="text-gray-700 space-y-2">
-                      <p><strong>Adults:</strong> 1-2 tablets every 4-6 hours as needed</p>
-                      <p><strong>Maximum:</strong> 8 tablets in 24 hours</p>
-                      <p><strong>Children (6-12 years):</strong> 1 tablet every 4-6 hours</p>
-                      <p><strong>Administration:</strong> Oral with water, can be taken with or without food</p>
-                    </div>
-                  </div>
-                </div>
+                                  </div>
               </div>
 
               {/* Safety Information */}

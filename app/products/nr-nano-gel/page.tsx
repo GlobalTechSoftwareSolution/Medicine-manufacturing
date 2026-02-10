@@ -69,17 +69,16 @@ export default function NrNanoGelPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-semibold text-indigo-600 mb-2">Dosage & Administration</h3>
-                    <div className="text-gray-700 space-y-2">
-                      <p><strong>Application:</strong> Apply thin layer to affected area</p>
-                      <p><strong>Frequency:</strong> 2-3 times daily as needed</p>
-                      <p><strong>Amount:</strong> Pea-sized amount per application</p>
-                      <p><strong>Massage:</strong> Gently massage until absorbed</p>
+                    <h3 className="text-lg font-semibold text-indigo-600 mb-2">Safety Information</h3>
+                    <div className="text-gray-700 space-y-2 text-sm">
+                      <p><strong>Contraindications:</strong> Broken skin, open wounds, hypersensitivity</p>
+                      <p><strong>Side Effects:</strong> Local skin irritation, rare allergic reactions</p>
+                      <p><strong>Pregnancy:</strong> Consult healthcare provider before use</p>
+                      <p><strong>Storage:</strong> Store at room temperature, protect from light</p>
                     </div>
                   </div>
                 </div>
               </div>
-
               {/* Safety Information */}
               <div className="bg-yellow-50 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-yellow-800 mb-3">Safety Information</h3>

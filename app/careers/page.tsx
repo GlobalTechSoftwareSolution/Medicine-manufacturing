@@ -167,7 +167,7 @@ export default function CareersPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Join Our Team</h1>
           <p className="text-xl max-w-3xl mx-auto opacity-90">
-            Build a rewarding career with NR Medicare and contribute to transforming healthcare globally
+            Build a rewarding career with NR Medicare 
           </p>
         </div>
       </div>
@@ -181,7 +181,7 @@ export default function CareersPage() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <motion.div 
-            className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-blue-300"
+            className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-blue-300 cursor-pointer"
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
@@ -198,7 +198,7 @@ export default function CareersPage() {
           </motion.div>
           
           <motion.div 
-            className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-purple-500"
+            className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-purple-500 cursor-pointer"
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
@@ -215,7 +215,7 @@ export default function CareersPage() {
           </motion.div>
           
           <motion.div 
-            className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-green-500"
+            className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-green-500 cursor-pointer"
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
@@ -362,13 +362,13 @@ export default function CareersPage() {
                   <div className="flex space-x-3">
                     <button 
                       onClick={() => handleApplyNow(vacancy)}
-                      className="bg-blue-400 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-500 transition-colors duration-300"
+                      className="bg-blue-400 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-500 transition-colors duration-300 cursor-pointer"
                     >
                       Apply
                     </button>
                     <button 
                       onClick={() => handleViewDetails(vacancy)}
-                      className="border-2 border-blue-400 text-blue-400 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300"
+                      className="border-2 border-blue-400 text-blue-400 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 cursor-pointer"
                     >
                       View Details
                     </button>
@@ -431,19 +431,19 @@ export default function CareersPage() {
           <div className="space-x-4">
             <button 
               onClick={handleUploadResume}
-              className="bg-white text-blue-400 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors duration-300"
+              className="bg-white text-blue-400 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 cursor-pointer"
             >
               Upload Resume
             </button>
             <button 
               onClick={handleJoinTalentPool}
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-400 transition-colors duration-300"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-400 transition-colors duration-300 cursor-pointer"
             >
               Join Talent Pool
             </button>
             <button 
               onClick={handleShowTerms}
-              className="text-white underline hover:text-gray-200 text-lg font-medium transition-colors duration-300"
+              className="text-white underline hover:text-gray-200 text-lg font-medium transition-colors duration-300 cursor-pointer"
             >
               Terms & Conditions
             </button>
@@ -460,7 +460,7 @@ export default function CareersPage() {
                 <h3 className="text-2xl font-bold text-gray-800">Apply for {selectedJob.title}</h3>
                 <button 
                   onClick={() => setShowApplicationModal(false)}
-                  className="text-gray-500 hover:text-gray-700"
+                  className="text-gray-500 hover:text-gray-700 cursor-pointer"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -537,14 +537,14 @@ export default function CareersPage() {
               <div className="mt-6 flex space-x-4">
                 <button 
                   type="submit"
-                  className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
+                  className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 cursor-pointer"
                 >
                   Submit Application
                 </button>
                 <button 
                   type="button"
                   onClick={() => setShowApplicationModal(false)}
-                  className="border-2 border-gray-300 text-gray-700 px-6 py-2 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-300"
+                  className="border-2 border-gray-300 text-gray-700 px-6 py-2 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-300 cursor-pointer"
                 >
                   Cancel
                 </button>
@@ -563,7 +563,7 @@ export default function CareersPage() {
                 <h3 className="text-2xl font-bold text-gray-800">{selectedJob.title}</h3>
                 <button 
                   onClick={() => setShowDetailsModal(false)}
-                  className="text-gray-500 hover:text-gray-700"
+                  className="text-gray-500 hover:text-gray-700 cursor-pointer"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -621,13 +621,13 @@ export default function CareersPage() {
                     setShowDetailsModal(false);
                     handleApplyNow(selectedJob);
                   }}
-                  className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
+                  className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 cursor-pointer"
                 >
                   Apply for this Position
                 </button>
                 <button 
                   onClick={() => setShowDetailsModal(false)}
-                  className="border-2 border-gray-300 text-gray-700 px-6 py-2 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-300"
+                  className="border-2 border-gray-300 text-gray-700 px-6 py-2 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-300 cursor-pointer"
                 >
                   Close
                 </button>
@@ -646,7 +646,7 @@ export default function CareersPage() {
                 <h3 className="text-2xl font-bold text-gray-800">Terms & Conditions</h3>
                 <button 
                   onClick={() => setShowTermsModal(false)}
-                  className="text-gray-500 hover:text-gray-700"
+                  className="text-gray-500 hover:text-gray-700 cursor-pointer"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -718,7 +718,7 @@ export default function CareersPage() {
               <div className="mt-6 flex justify-end">
                 <button 
                   onClick={() => setShowTermsModal(false)}
-                  className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
+                  className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 cursor-pointer"
                 >
                   I Agree
                 </button>

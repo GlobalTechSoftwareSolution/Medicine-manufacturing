@@ -107,9 +107,6 @@ export default function Innovations() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-3">{innovation.title}</h3>
                     <p className="text-gray-600 mb-4">{innovation.description}</p>
-                    <button className="text-blue-600 font-medium hover:text-blue-700 transition-colors">
-                      Learn More →
-                    </button>
                   </div>
                 </div>
               ))}
