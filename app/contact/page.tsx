@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Script from 'next/script';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,24 +14,79 @@ export default function Contact() {
     message: ''
   });
 
+  const form = useRef<HTMLFormElement>(null);
+  const [isEmailJSLoaded, setIsEmailJSLoaded] = useState(false);
+
+  useEffect(() => {
+    // Initialize EmailJS
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+    script.async = true;
+    script.onload = () => {
+      (window as any).emailjs.init('-VkdNw70CCWimx_AP');
+      setIsEmailJSLoaded(true);
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    
+    // Map form field names to state keys
+    const stateKey = name.replace('from_', '') as keyof typeof formData;
+    
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [stateKey]: value
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message. We will get back to you soon!');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      message: ''
-    });
+
+    if (!form.current || !isEmailJSLoaded) {
+      alert('Email service is loading. Please try again in a moment.');
+      return;
+    }
+
+    // EmailJS configuration
+    const serviceId = 'service_shplp7t';
+    const templateId = 'template_lny28sp';
+    const publicKey = '-VkdNw70CCWimx_AP';
+
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      company: formData.company,
+      message: formData.message
+    };
+
+    // Using EmailJS to send email
+    (window as any).emailjs.sendForm('service_hlym7mg', 'template_lny28sp', form.current, '-VkdNw70CCWimx_AP')
+      .then(
+        (response: any) => {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('Message sent successfully! We will get back to you soon.');
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            company: '',
+            message: ''
+          });
+        },
+        (error: any) => {
+          console.log('FAILED...', error);
+          alert('Failed to send message. Please try again later.');
+        }
+      );
   };
 
   return (
@@ -68,7 +124,7 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-base sm:text-lg font-semibold mb-1">Headquarters</h3>
+                      <h3 className="text-base sm:text-lg font-semibold mb-1">Headquarter</h3>
                       <p className="text-sm sm:text-base text-gray-600">No 36 1st Flr Giridhama, Layout 5th Mn Gattigere, Rajarajeshwarinagar, Bangalore, Bangalore South, Karnataka, India, 560098.</p>
                     </div>
                   </div>
@@ -93,7 +149,7 @@ export default function Contact() {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-base sm:text-lg font-semibold mb-1">Email</h3>
-                      <p className="text-sm sm:text-base text-gray-600">info@nrmedicare@gmail.com</p>
+                      <p className="text-sm sm:text-base text-gray-600">nagendra0297@gmail.com</p>
                     </div>
                   </div>
 
@@ -114,7 +170,7 @@ export default function Contact() {
               <div>
                 <div className="bg-gray-50 rounded-lg p-4 sm:p-6 md:p-8">
                   <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Send us a Message</h2>
-                  <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+                  <form ref={form} onSubmit={sendEmail} className="space-y-3 sm:space-y-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                         Full Name *
@@ -122,7 +178,7 @@ export default function Contact() {
                       <input
                         type="text"
                         id="name"
-                        name="name"
+                        name="from_name"
                         value={formData.name}
                         onChange={handleChange}
                         required
@@ -137,7 +193,7 @@ export default function Contact() {
                       <input
                         type="email"
                         id="email"
-                        name="email"
+                        name="from_email"
                         value={formData.email}
                         onChange={handleChange}
                         required
@@ -152,7 +208,7 @@ export default function Contact() {
                       <input
                         type="tel"
                         id="phone"
-                        name="phone"
+                        name="from_phone"
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
@@ -166,7 +222,7 @@ export default function Contact() {
                       <input
                         type="text"
                         id="company"
-                        name="company"
+                        name="from_company"
                         value={formData.company}
                         onChange={handleChange}
                         className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"

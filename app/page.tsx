@@ -478,7 +478,7 @@ export default function Home() {
 
                   <motion.p 
 
-                    className="text-xl md:text-2xl mb-12 text-white font-sans font-medium leading-relaxed"
+                    className="text-xl md:text-2xl mb-12 text-black font-sans font-medium leading-relaxed"
 
                     initial={{ opacity: 0, x: -50 }}
 
