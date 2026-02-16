@@ -246,11 +246,11 @@ export default function CareersPage() {
 
 
 
-  const handleApplicationSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-
+  const handleApplicationSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
     const name = formData.get('name');
 
@@ -263,14 +263,35 @@ export default function CareersPage() {
     
 
     if (name && email && phone && selectedJob) {
+      try {
+        // Send email using the same API as contact form
+        const response = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone,
+            company: selectedJob.department + ' - ' + selectedJob.location,
+            message: `Job Application for: ${selectedJob.title}\n\nDepartment: ${selectedJob.department}\nLocation: ${selectedJob.location}\nExperience: ${experience}\n\nApplicant Details:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nApplied via NR Medicare Careers Page`
+          }),
+        });
 
-      alert(`Thank you for applying for ${selectedJob.title}! We'll review your application and contact you soon.`);
-
-      setShowApplicationModal(false);
-
-      setSelectedJob(null);
-
-      e.currentTarget.reset();
+        if (response.ok) {
+          alert(`Thank you for applying for ${selectedJob.title}! We'll review your application and contact you soon.`);
+          setShowApplicationModal(false);
+          setSelectedJob(null);
+          if (form) form.reset();
+        } else {
+          const errorData = await response.json();
+          throw new Error(errorData.error || 'Application submission failed');
+        }
+      } catch (error: any) {
+        console.error('Application submission error:', error);
+        alert(`Failed to submit application: ${error.message || 'Please try again later or contact us directly at info@nrmedicare.com'}`);
+      }
 
     } else {
 
