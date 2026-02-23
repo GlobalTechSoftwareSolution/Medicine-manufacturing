@@ -17,10 +17,10 @@ export default function Contact() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    
+
     // Map form field names to state keys
     const stateKey = name.replace('from_', '') as keyof typeof formData;
-    
+
     setFormData({
       ...formData,
       [stateKey]: value
@@ -65,7 +65,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      
+
       <main>
         <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12 sm:py-16 md:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,9 +82,9 @@ export default function Contact() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
               <div>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Get in Touch</h2>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 sm:mb-8">
-                  Whether you're a healthcare provider, distributor, or potential partner, we're here to help. 
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">Get in Touch</h2>
+                <p className="text-sm sm:text-base md:text-lg text-gray-800 mb-6 sm:mb-8 font-medium">
+                  Whether you're a healthcare provider, distributor, or potential partner, we're here to help.
                   Reach out to us and our dedicated team will respond promptly.
                 </p>
 
@@ -97,8 +97,8 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-base sm:text-lg font-semibold mb-1">Headquarter</h3>
-                      <p className="text-sm sm:text-base text-gray-600">No 36 1st Flr Giridhama, Layout 5th Mn Gattigere, Rajarajeshwarinagar, Bangalore, Bangalore South, Karnataka, India, 560098.</p>
+                      <h3 className="text-base sm:text-lg font-bold text-black mb-1">Headquarter</h3>
+                      <p className="text-sm sm:text-base text-gray-800">No 36 1st Flr Giridhama, Layout 5th Mn Gattigere, Rajarajeshwarinagar, Bangalore, Bangalore South, Karnataka, India, 560098.</p>
                     </div>
                   </div>
 
@@ -109,8 +109,8 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-base sm:text-lg font-semibold mb-1">Phone</h3>
-                      <p className="text-sm sm:text-base text-gray-600">+91 96663664548</p>
+                      <h3 className="text-base sm:text-lg font-bold text-black mb-1">Phone</h3>
+                      <p className="text-sm sm:text-base text-gray-800">+91 96663664548</p>
                     </div>
                   </div>
 
@@ -121,8 +121,8 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-base sm:text-lg font-semibold mb-1">Email</h3>
-                      <p className="text-sm sm:text-base text-gray-600">info@nrmedicare.com</p>
+                      <h3 className="text-base sm:text-lg font-bold text-black mb-1">Email</h3>
+                      <p className="text-sm sm:text-base text-gray-800">info@nrmedicare.com</p>
                     </div>
                   </div>
 
@@ -133,19 +133,19 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-base sm:text-lg font-semibold mb-1">Business Hours</h3>
-                      <p className="text-sm sm:text-base text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM EST<br />Saturday: 10:00 AM - 2:00 PM EST<br />Sunday: Closed</p>
+                      <h3 className="text-base sm:text-lg font-bold text-black mb-1">Business Hours</h3>
+                      <p className="text-sm sm:text-base text-gray-800">Monday - Friday: 9:00 AM - 6:00 PM EST<br />Saturday: 10:00 AM - 2:00 PM EST<br />Sunday: Closed</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div>
-                <div className="bg-gray-50 rounded-lg p-4 sm:p-6 md:p-8">
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Send us a Message</h2>
+                <div className="bg-gray-50 rounded-lg p-4 sm:p-6 md:p-8 shadow-inner">
+                  <h2 className="text-xl sm:text-2xl font-bold text-black mb-4 sm:mb-6">Send us a Message</h2>
                   <form onSubmit={sendEmail} className="space-y-3 sm:space-y-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="name" className="block text-sm font-bold text-gray-800 mb-1">
                         Full Name *
                       </label>
                       <input
@@ -160,7 +160,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="email" className="block text-sm font-bold text-gray-800 mb-1">
                         Email Address *
                       </label>
                       <input
@@ -175,7 +175,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="phone" className="block text-sm font-bold text-gray-800 mb-1">
                         Phone Number
                       </label>
                       <input
@@ -189,7 +189,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="company" className="block text-sm font-bold text-gray-800 mb-1">
                         Company/Organization
                       </label>
                       <input
@@ -203,7 +203,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="message" className="block text-sm font-bold text-gray-800 mb-1">
                         Message *
                       </label>
                       <textarea
@@ -231,9 +231,9 @@ export default function Contact() {
           </div>
         </section>
 
-        
+
       </main>
-      
+
       <Footer />
     </div>
   );

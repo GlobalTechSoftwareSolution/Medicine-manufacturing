@@ -20,59 +20,40 @@ export default function Navbar() {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center space-x-4 group cursor-pointer">
-  <div className="w-32 h-16 overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl rounded-lg">
-    <img src="/logo.jpg" alt="NR Medicare Logo" className="w-full h-full object-contain" />
-  </div>
-  <span className="text-2xl font-sans bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
-    NR Medicare
-  </span>
-</Link>
-
-
+              <div className="w-32 h-16 overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl rounded-lg">
+                <img src="/logo.jpg" alt="NR Medicare Logo" className="w-full h-full object-contain" />
+              </div>
+              <span className="text-2xl font-bold font-sans bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
+                NR Medicare
+              </span>
+            </Link>
           </div>
-          
+
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className={`px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
-              isActive('/') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
-            }`}>
-              Home
-            </Link>
-            <Link href="/about" className={`px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
-              isActive('/about') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
-            }`}>
-              About
-            </Link>
-            <Link href="/products" className={`px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
-              isActive('/products') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
-            }`}>
-              Products
-            </Link>
-            <Link href="/careers" className={`px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
-              isActive('/careers') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
-            }`}>
-              Careers
-            </Link>
-            <Link href="/education" className={`px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
-              isActive('/education') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
-            }`}>
-              Individual Education
-            </Link>
-            <Link href="/innovations" className={`px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
-              isActive('/innovations') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
-            }`}>
-              Innovations
-            </Link>
-            <Link href="/contact" className={`px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
-              isActive('/contact') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
-            }`}>
-              Contact Us
-            </Link>
+            {[
+              { name: 'Home', path: '/' },
+              { name: 'About', path: '/about' },
+              { name: 'Products', path: '/products' },
+              { name: 'Careers', path: '/careers' },
+              { name: 'Individual Education', path: '/education' },
+              { name: 'Innovations', path: '/innovations' },
+              { name: 'Contact Us', path: '/contact' }
+            ].map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                className={`px-3 py-2 rounded-md text-sm font-semibold transition-colors cursor-pointer ${isActive(link.path) ? 'text-blue-600 bg-blue-50' : 'text-black hover:text-blue-600'
+                  }`}
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
-          
+
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 cursor-pointer"
+              className="inline-flex items-center justify-center p-2 rounded-md text-black hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 cursor-pointer"
             >
               <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isOpen ? (
@@ -85,45 +66,28 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      
+
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-            <Link href="/" className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer ${
-              isActive('/') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
-            }`}>
-              Home
-            </Link>
-            <Link href="/about" className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer ${
-              isActive('/about') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
-            }`}>
-              About
-            </Link>
-            <Link href="/products" className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer ${
-              isActive('/products') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
-            }`}>
-              Products
-            </Link>
-            <Link href="/careers" className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer ${
-              isActive('/careers') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
-            }`}>
-              Careers
-            </Link>
-            <Link href="/education" className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer ${
-              isActive('/education') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
-            }`}>
-              Individual Education
-            </Link>
-            <Link href="/innovations" className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer ${
-              isActive('/innovations') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
-            }`}>
-              Innovations
-            </Link>
-            <Link href="/contact" className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer ${
-              isActive('/contact') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600'
-            }`}>
-              Contact Us
-            </Link>
+            {[
+              { name: 'Home', path: '/' },
+              { name: 'About', path: '/about' },
+              { name: 'Products', path: '/products' },
+              { name: 'Careers', path: '/careers' },
+              { name: 'Individual Education', path: '/education' },
+              { name: 'Innovations', path: '/innovations' },
+              { name: 'Contact Us', path: '/contact' }
+            ].map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                className={`block px-3 py-2 rounded-md text-base font-semibold cursor-pointer ${isActive(link.path) ? 'text-blue-600 bg-blue-50' : 'text-black hover:text-blue-600'
+                  }`}
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
         </div>
       )}
