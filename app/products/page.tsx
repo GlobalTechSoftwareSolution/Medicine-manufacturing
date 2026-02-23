@@ -24,7 +24,7 @@ const scaleAnimation = {
 
   animate: { scale: [1, 1.02, 1.01, 1.02, 1.01, 1.02, 1] },
 
-  transition: { 
+  transition: {
 
     duration: 2,
 
@@ -42,7 +42,7 @@ const scaleRotateAnimation = {
 
   initial: { scale: 1, rotate: 0 },
 
-  animate: { 
+  animate: {
 
     scale: [1, 1.03, 1.01, 1.03, 1.01, 1.03, 1],
 
@@ -50,7 +50,7 @@ const scaleRotateAnimation = {
 
   },
 
-  transition: { 
+  transition: {
 
     duration: 2.5,
 
@@ -68,7 +68,7 @@ const pulseAnimation = {
 
   initial: { scale: 1, opacity: 0.5 },
 
-  animate: { 
+  animate: {
 
     scale: [1, 1.1, 1.05, 1.1, 1.05, 1.1, 1.05, 1],
 
@@ -78,7 +78,7 @@ const pulseAnimation = {
 
   },
 
-  transition: { 
+  transition: {
 
     duration: 3.5,
 
@@ -238,11 +238,11 @@ export default function ProductsPage() {
 
         <div className="absolute inset-0 opacity-50">
 
-          <Image 
+          <Image
 
-            src="/product.png" 
+            src="/product.png"
 
-            alt="NR Medicare Products" 
+            alt="NR Medicare Products"
 
             fill
 
@@ -262,9 +262,9 @@ export default function ProductsPage() {
 
           <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed text-justify">
 
-              NR Medicare offers a comprehensive range of high-quality pharmaceutical products developed to meet essential healthcare needs. Our portfolio includes reliable formulations and active pharmaceutical ingredients (APIs) manufactured with a strong focus on safety, consistency, and regulatory compliance.
+            NR Medicare offers a comprehensive range of high-quality pharmaceutical products developed to meet essential healthcare needs. Our portfolio includes reliable formulations and active pharmaceutical ingredients (APIs) manufactured with a strong focus on safety, consistency, and regulatory compliance.
 
-            </p>
+          </p>
 
         </div>
 
@@ -284,13 +284,13 @@ export default function ProductsPage() {
 
           </div>
 
-          
+
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
 
             {/* PARANAC-PLUS Card */}
 
-            <motion.div 
+            <motion.div
 
               className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
 
@@ -302,11 +302,11 @@ export default function ProductsPage() {
 
               <div className="aspect-square bg-gray-100 flex items-center justify-center">
 
-                <motion.img 
+                <motion.img
 
-                  src="/M1.jpg" 
+                  src="/M1.jpg"
 
-                  alt="PARANAC-PLUS" 
+                  alt="PARANAC-PLUS"
 
                   className="w-full h-full object-cover"
 
@@ -320,7 +320,7 @@ export default function ProductsPage() {
 
                 <h3 className="text-sm font-bold text-gray-900 text-center mb-3">PARANAC-PLUS</h3>
 
-                <button 
+                <button
 
                   onClick={() => router.push('/products/paranac-plus')}
 
@@ -340,7 +340,7 @@ export default function ProductsPage() {
 
             {/* MONTORIN-LC Card */}
 
-            <motion.div 
+            <motion.div
 
               className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
 
@@ -352,15 +352,15 @@ export default function ProductsPage() {
 
               <div className="aspect-square bg-gray-100 flex items-center justify-center">
 
-                <motion.img 
+                <motion.img
 
-                  src="/M2.png" 
+                  src="/M2.png"
 
-                  alt="MONTORIN-LC" 
+                  alt="MONTORIN-LC"
 
                   className="w-full h-full object-cover"
 
-                  animate={{ 
+                  animate={{
 
                     scale: [1, 1.05, 1],
 
@@ -368,7 +368,7 @@ export default function ProductsPage() {
 
                   }}
 
-                  transition={{ 
+                  transition={{
 
                     duration: 3,
 
@@ -388,7 +388,7 @@ export default function ProductsPage() {
 
                 <h3 className="text-sm font-bold text-gray-900 text-center mb-3">MONTORIN-LC</h3>
 
-                <button 
+                <button
 
                   onClick={() => router.push('/products/montinor-lc')}
 
@@ -408,7 +408,7 @@ export default function ProductsPage() {
 
             {/* PARANAC-SP Card */}
 
-            <motion.div 
+            <motion.div
 
               className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
 
@@ -420,15 +420,15 @@ export default function ProductsPage() {
 
               <div className="aspect-square bg-gray-100 flex items-center justify-center">
 
-                <motion.img 
+                <motion.img
 
-                  src="/M3.png" 
+                  src="/M3.png"
 
-                  alt="PARANAC-SP" 
+                  alt="PARANAC-SP"
 
                   className="w-full h-full object-cover"
 
-                  animate={{ 
+                  animate={{
 
                     scale: [1, 1.06, 1],
 
@@ -436,7 +436,7 @@ export default function ProductsPage() {
 
                   }}
 
-                  transition={{ 
+                  transition={{
 
                     duration: 4,
 
@@ -456,7 +456,7 @@ export default function ProductsPage() {
 
                 <h3 className="text-sm font-bold text-gray-900 text-center mb-3">PARANAC-SP</h3>
 
-                <button 
+                <button
 
                   onClick={() => router.push('/products/paranac-sp')}
 
@@ -476,7 +476,7 @@ export default function ProductsPage() {
 
             {/* PANFA-DSR Card */}
 
-            <motion.div 
+            <motion.div
 
               className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
 
@@ -488,15 +488,15 @@ export default function ProductsPage() {
 
               <div className="aspect-square bg-gray-100 flex items-center justify-center">
 
-                <motion.img 
+                <motion.img
 
-                  src="/M4.png" 
+                  src="/M4.png"
 
-                  alt="PANFA-DSR" 
+                  alt="PANFA-DSR"
 
                   className="w-full h-full object-cover"
 
-                  animate={{ 
+                  animate={{
 
                     scale: [1, 1.04, 1],
 
@@ -504,7 +504,7 @@ export default function ProductsPage() {
 
                   }}
 
-                  transition={{ 
+                  transition={{
 
                     duration: 3.5,
 
@@ -524,7 +524,7 @@ export default function ProductsPage() {
 
                 <h3 className="text-sm font-bold text-gray-900 text-center mb-3">PANFA-DSR</h3>
 
-                <button 
+                <button
 
                   onClick={() => router.push('/products/panfa-dsr')}
 
@@ -544,7 +544,7 @@ export default function ProductsPage() {
 
             {/* AGUMED-625 Card */}
 
-            <motion.div 
+            <motion.div
 
               className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
 
@@ -556,15 +556,15 @@ export default function ProductsPage() {
 
               <div className="aspect-square bg-gray-100 flex items-center justify-center">
 
-                <motion.img 
+                <motion.img
 
-                  src="/M5.png" 
+                  src="/M5.png"
 
-                  alt="AGUMED-625" 
+                  alt="AGUMED-625"
 
                   className="w-full h-full object-cover"
 
-                  animate={{ 
+                  animate={{
 
                     scale: [1, 1.03, 1],
 
@@ -572,7 +572,7 @@ export default function ProductsPage() {
 
                   }}
 
-                  transition={{ 
+                  transition={{
 
                     duration: 2.5,
 
@@ -590,7 +590,7 @@ export default function ProductsPage() {
 
                 <h3 className="text-sm font-bold text-gray-900 text-center mb-3">AGUMED-625</h3>
 
-                <button 
+                <button
 
                   onClick={() => router.push('/products/agumed-625')}
 
@@ -610,7 +610,7 @@ export default function ProductsPage() {
 
             {/* PARANAC-MR Card */}
 
-            <motion.div 
+            <motion.div
 
               className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
 
@@ -622,15 +622,15 @@ export default function ProductsPage() {
 
               <div className="aspect-square bg-gray-100 flex items-center justify-center">
 
-                <motion.img 
+                <motion.img
 
-                  src="/M6.png" 
+                  src="/M6.png"
 
-                  alt="PARANAC-MR" 
+                  alt="PARANAC-MR"
 
                   className="w-full h-full object-cover"
 
-                  animate={{ 
+                  animate={{
 
                     scale: [1, 1.05, 1],
 
@@ -640,7 +640,7 @@ export default function ProductsPage() {
 
                   }}
 
-                  transition={{ 
+                  transition={{
 
                     duration: 3,
 
@@ -660,7 +660,7 @@ export default function ProductsPage() {
 
                 <h3 className="text-sm font-bold text-gray-900 text-center mb-3">PARANAC-MR</h3>
 
-                <button 
+                <button
 
                   onClick={() => router.push('/products/paranac-mr')}
 
@@ -680,7 +680,7 @@ export default function ProductsPage() {
 
             {/* NR NANO-GEL Card */}
 
-            <motion.div 
+            <motion.div
 
               className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
 
@@ -692,15 +692,15 @@ export default function ProductsPage() {
 
               <div className="aspect-square bg-gray-100 flex items-center justify-center">
 
-                <motion.img 
+                <motion.img
 
-                  src="/M7.PNG" 
+                  src="/M7.png"
 
-                  alt="NR NANO-GEL" 
+                  alt="NR NANO-GEL"
 
                   className="w-full h-full object-cover"
 
-                  animate={{ 
+                  animate={{
 
                     scale: [1, 1.08, 1],
 
@@ -708,7 +708,7 @@ export default function ProductsPage() {
 
                   }}
 
-                  transition={{ 
+                  transition={{
 
                     duration: 4,
 
@@ -728,7 +728,7 @@ export default function ProductsPage() {
 
                 <h3 className="text-sm font-bold text-gray-900 text-center mb-3">NR NANO-GEL</h3>
 
-                <button 
+                <button
 
                   onClick={() => router.push('/products/nr-nano-gel')}
 
@@ -748,7 +748,7 @@ export default function ProductsPage() {
 
             {/* ITRODERM-PLUS Card */}
 
-            <motion.div 
+            <motion.div
 
               className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
 
@@ -760,15 +760,15 @@ export default function ProductsPage() {
 
               <div className="aspect-square bg-gray-100 flex items-center justify-center">
 
-                <motion.img 
+                <motion.img
 
-                  src="/M8.PNG" 
+                  src="/M8.png"
 
-                  alt="ITRODERM-PLUS" 
+                  alt="ITRODERM-PLUS"
 
                   className="w-full h-full object-cover"
 
-                  animate={{ 
+                  animate={{
 
                     scale: [1, 1.06, 1],
 
@@ -776,7 +776,7 @@ export default function ProductsPage() {
 
                   }}
 
-                  transition={{ 
+                  transition={{
 
                     duration: 3.5,
 
@@ -796,7 +796,7 @@ export default function ProductsPage() {
 
                 <h3 className="text-sm font-bold text-gray-900 text-center mb-3">ITRODERM-PLUS</h3>
 
-                <button 
+                <button
 
                   onClick={() => router.push('/products/itroderm-plus')}
 

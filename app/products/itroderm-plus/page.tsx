@@ -22,7 +22,7 @@ export default function ItrodermPlusPage() {
 
       <Navbar />
 
-      
+
 
       {/* Back Button */}
 
@@ -30,7 +30,7 @@ export default function ItrodermPlusPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
 
-          <button 
+          <button
 
             onClick={() => router.push('/products')}
 
@@ -68,7 +68,7 @@ export default function ItrodermPlusPage() {
 
             <div className="w-32 h-32 mx-auto mb-8 bg-white rounded-lg shadow-lg p-4 flex items-center justify-center">
 
-              <img src="/M8.PNG" alt="ITRODERM-PLUS" className="w-full h-full object-cover" />
+              <img src="/M8.png" alt="ITRODERM-PLUS" className="w-full h-full object-cover" />
 
             </div>
 
@@ -96,7 +96,7 @@ export default function ItrodermPlusPage() {
 
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Product Information</h2>
 
-                
+
 
                 <div className="space-y-6">
 
@@ -106,7 +106,7 @@ export default function ItrodermPlusPage() {
 
                     <p className="text-gray-700 leading-relaxed">
 
-                      Advanced dermatological formula with multiple active ingredients. 
+                      Advanced dermatological formula with multiple active ingredients.
 
                       Combines anti-inflammatory, antimicrobial, and healing agents for comprehensive skin care.
 
@@ -284,7 +284,7 @@ export default function ItrodermPlusPage() {
 
           <div className="mt-12 text-center">
 
-            <button 
+            <button
 
               onClick={() => router.push('/products')}
 
