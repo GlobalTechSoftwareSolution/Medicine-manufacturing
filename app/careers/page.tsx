@@ -260,7 +260,7 @@ export default function CareersPage() {
 
     const experience = formData.get('experience');
 
-    
+
 
     if (name && email && phone && selectedJob) {
       try {
@@ -327,7 +327,7 @@ export default function CareersPage() {
 
       <Navbar />
 
-      
+
 
       {/* Hero Section */}
 
@@ -335,11 +335,11 @@ export default function CareersPage() {
 
         <div className="absolute inset-0 opacity-20">
 
-          <Image 
+          <Image
 
-            src="/careers.png" 
+            src="/careers.png"
 
-            alt="Careers at NR Medicare" 
+            alt="Careers at NR Medicare"
 
             fill
 
@@ -379,15 +379,15 @@ export default function CareersPage() {
 
         </div>
 
-        
+
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
 
-          <motion.div 
+          <motion.div
 
             className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-blue-500"
 
-            whileHover={{ 
+            whileHover={{
 
               scale: 1.05,
 
@@ -415,13 +415,13 @@ export default function CareersPage() {
 
           </motion.div>
 
-          
 
-          <motion.div 
+
+          <motion.div
 
             className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-purple-500"
 
-            whileHover={{ 
+            whileHover={{
 
               scale: 1.05,
 
@@ -449,13 +449,13 @@ export default function CareersPage() {
 
           </motion.div>
 
-          
 
-          <motion.div 
+
+          <motion.div
 
             className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-green-500"
 
-            whileHover={{ 
+            whileHover={{
 
               scale: 1.05,
 
@@ -509,7 +509,7 @@ export default function CareersPage() {
 
           </div>
 
-          
+
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 
@@ -527,7 +527,7 @@ export default function CareersPage() {
 
             </div>
 
-            
+
 
             <div className="text-center">
 
@@ -543,7 +543,7 @@ export default function CareersPage() {
 
             </div>
 
-            
+
 
             <div className="text-center">
 
@@ -559,7 +559,7 @@ export default function CareersPage() {
 
             </div>
 
-            
+
 
             <div className="text-center">
 
@@ -597,7 +597,7 @@ export default function CareersPage() {
 
         </div>
 
-        
+
 
         {/* Filters */}
 
@@ -607,21 +607,22 @@ export default function CareersPage() {
 
             <div>
 
-              <label className="block text-sm font-medium text-gray-700 mb-2">Department</label>
+              <label className="block text-sm font-medium text-black mb-2">Department</label>
 
-              <select 
+              <select
 
                 value={selectedDepartment}
 
                 onChange={(e) => setSelectedDepartment(e.target.value)}
 
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-black appearance-auto"
+                style={{ color: 'black' }}
 
               >
 
                 {departments.map(dept => (
 
-                  <option key={dept} value={dept}>
+                  <option key={dept} value={dept} style={{ color: 'black' }}>
 
                     {dept === 'all' ? 'All Departments' : dept}
 
@@ -633,25 +634,26 @@ export default function CareersPage() {
 
             </div>
 
-            
+
 
             <div>
 
-              <label className="block text-sm font-medium text-gray-700 mb-2">Location</label>
+              <label className="block text-sm font-medium text-black mb-2">Location</label>
 
-              <select 
+              <select
 
                 value={selectedLocation}
 
                 onChange={(e) => setSelectedLocation(e.target.value)}
 
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-black appearance-auto"
+                style={{ color: 'black' }}
 
               >
 
                 {locations.map(loc => (
 
-                  <option key={loc} value={loc}>
+                  <option key={loc} value={loc} style={{ color: 'black' }}>
 
                     {loc === 'all' ? 'All Locations' : loc}
 
@@ -667,7 +669,7 @@ export default function CareersPage() {
 
         </div>
 
-        
+
 
         {/* Job Listings */}
 
@@ -743,7 +745,7 @@ export default function CareersPage() {
 
                   <div className="flex space-x-3">
 
-                    <button 
+                    <button
 
                       onClick={() => handleApplyNow(vacancy)}
 
@@ -755,7 +757,7 @@ export default function CareersPage() {
 
                     </button>
 
-                    <button 
+                    <button
 
                       onClick={() => handleViewDetails(vacancy)}
 
@@ -771,7 +773,7 @@ export default function CareersPage() {
 
                 </div>
 
-                
+
 
                 <p className="text-gray-600 mb-4">{vacancy.description}</p>
 
@@ -821,7 +823,7 @@ export default function CareersPage() {
 
           </div>
 
-          
+
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
@@ -880,7 +882,7 @@ export default function CareersPage() {
           </p>
 
           <div className="flex justify-center">
-            <button 
+            <button
               onClick={handleShowTerms}
               className="text-white underline hover:text-gray-200 text-lg font-medium transition-colors duration-300"
             >
@@ -908,7 +910,7 @@ export default function CareersPage() {
 
                 <h3 className="text-2xl font-bold text-gray-800">Apply for {selectedJob.title}</h3>
 
-                <button 
+                <button
 
                   onClick={() => setShowApplicationModal(false)}
 
@@ -928,7 +930,7 @@ export default function CareersPage() {
 
             </div>
 
-            
+
 
             <form onSubmit={handleApplicationSubmit} className="p-6">
 
@@ -938,9 +940,9 @@ export default function CareersPage() {
 
                   <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
 
-                  <input 
+                  <input
 
-                    type="text" 
+                    type="text"
 
                     name="name"
 
@@ -954,15 +956,15 @@ export default function CareersPage() {
 
                 </div>
 
-                
+
 
                 <div>
 
                   <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
 
-                  <input 
+                  <input
 
-                    type="email" 
+                    type="email"
 
                     name="email"
 
@@ -976,15 +978,15 @@ export default function CareersPage() {
 
                 </div>
 
-                
+
 
                 <div>
 
                   <label className="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
 
-                  <input 
+                  <input
 
-                    type="tel" 
+                    type="tel"
 
                     name="phone"
 
@@ -998,15 +1000,15 @@ export default function CareersPage() {
 
                 </div>
 
-                
+
 
                 <div>
 
                   <label className="block text-sm font-medium text-gray-700 mb-2">Experience</label>
 
-                  <input 
+                  <input
 
-                    type="text" 
+                    type="text"
 
                     name="experience"
 
@@ -1020,13 +1022,13 @@ export default function CareersPage() {
 
               </div>
 
-              
+
 
               <div className="mt-4">
 
                 <label className="block text-sm font-medium text-gray-700 mb-2">Cover Letter</label>
 
-                <textarea 
+                <textarea
 
                   name="coverLetter"
 
@@ -1040,15 +1042,15 @@ export default function CareersPage() {
 
               </div>
 
-              
+
 
               <div className="mt-4">
 
                 <label className="block text-sm font-medium text-gray-700 mb-2">Resume</label>
 
-                <input 
+                <input
 
-                  type="file" 
+                  type="file"
 
                   accept=".pdf,.doc,.docx"
 
@@ -1058,11 +1060,11 @@ export default function CareersPage() {
 
               </div>
 
-              
+
 
               <div className="mt-6 flex space-x-4">
 
-                <button 
+                <button
 
                   type="submit"
 
@@ -1074,7 +1076,7 @@ export default function CareersPage() {
 
                 </button>
 
-                <button 
+                <button
 
                   type="button"
 
@@ -1114,7 +1116,7 @@ export default function CareersPage() {
 
                 <h3 className="text-2xl font-bold text-gray-800">{selectedJob.title}</h3>
 
-                <button 
+                <button
 
                   onClick={() => setShowDetailsModal(false)}
 
@@ -1134,7 +1136,7 @@ export default function CareersPage() {
 
             </div>
 
-            
+
 
             <div className="p-6">
 
@@ -1174,7 +1176,7 @@ export default function CareersPage() {
 
               </div>
 
-              
+
 
               <div className="mb-6">
 
@@ -1184,7 +1186,7 @@ export default function CareersPage() {
 
               </div>
 
-              
+
 
               <div className="mb-6">
 
@@ -1202,7 +1204,7 @@ export default function CareersPage() {
 
               </div>
 
-              
+
 
               <div className="mb-6">
 
@@ -1220,11 +1222,11 @@ export default function CareersPage() {
 
               </div>
 
-              
+
 
               <div className="flex space-x-4">
 
-                <button 
+                <button
 
                   onClick={() => {
 
@@ -1242,7 +1244,7 @@ export default function CareersPage() {
 
                 </button>
 
-                <button 
+                <button
 
                   onClick={() => setShowDetailsModal(false)}
 
@@ -1280,7 +1282,7 @@ export default function CareersPage() {
 
                 <h3 className="text-2xl font-bold text-gray-800">Terms & Conditions</h3>
 
-                <button 
+                <button
 
                   onClick={() => setShowTermsModal(false)}
 
@@ -1300,7 +1302,7 @@ export default function CareersPage() {
 
             </div>
 
-            
+
 
             <div className="p-6">
 
@@ -1314,7 +1316,7 @@ export default function CareersPage() {
 
                 </p>
 
-                
+
 
                 <h4 className="text-lg font-semibold text-gray-800 mb-4">2. Application Process</h4>
 
@@ -1324,7 +1326,7 @@ export default function CareersPage() {
 
                 </p>
 
-                
+
 
                 <h4 className="text-lg font-semibold text-gray-800 mb-4">3. Privacy and Data Protection</h4>
 
@@ -1334,7 +1336,7 @@ export default function CareersPage() {
 
                 </p>
 
-                
+
 
                 <h4 className="text-lg font-semibold text-gray-800 mb-4">4. Equal Employment Opportunity</h4>
 
@@ -1344,7 +1346,7 @@ export default function CareersPage() {
 
                 </p>
 
-                
+
 
                 <h4 className="text-lg font-semibold text-gray-800 mb-4">5. Confidentiality</h4>
 
@@ -1354,7 +1356,7 @@ export default function CareersPage() {
 
                 </p>
 
-                
+
 
                 <h4 className="text-lg font-semibold text-gray-800 mb-4">6. Background Verification</h4>
 
@@ -1364,7 +1366,7 @@ export default function CareersPage() {
 
                 </p>
 
-                
+
 
                 <h4 className="text-lg font-semibold text-gray-800 mb-4">7. Intellectual Property</h4>
 
@@ -1374,7 +1376,7 @@ export default function CareersPage() {
 
                 </p>
 
-                
+
 
                 <h4 className="text-lg font-semibold text-gray-800 mb-4">8. No Employment Guarantee</h4>
 
@@ -1384,7 +1386,7 @@ export default function CareersPage() {
 
                 </p>
 
-                
+
 
                 <h4 className="text-lg font-semibold text-gray-800 mb-4">9. Governing Law</h4>
 
@@ -1394,7 +1396,7 @@ export default function CareersPage() {
 
                 </p>
 
-                
+
 
                 <h4 className="text-lg font-semibold text-gray-800 mb-4">10. Contact Information</h4>
 
@@ -1404,7 +1406,7 @@ export default function CareersPage() {
 
                 </p>
 
-                
+
 
                 <div className="bg-gray-50 p-4 rounded-lg mt-8">
 
@@ -1420,11 +1422,11 @@ export default function CareersPage() {
 
               </div>
 
-              
+
 
               <div className="mt-6 flex justify-end">
 
-                <button 
+                <button
 
                   onClick={() => setShowTermsModal(false)}
 
@@ -1446,7 +1448,7 @@ export default function CareersPage() {
 
       )}
 
-      
+
 
       <Footer />
 
