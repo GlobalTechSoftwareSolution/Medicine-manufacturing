@@ -64,7 +64,7 @@ export default function Home() {
 
     let botResponse = '';
 
-    switch(section) {
+    switch (section) {
 
       case 'About Company':
 
@@ -318,36 +318,36 @@ export default function Home() {
 
       <Navbar />
 
-      
+
 
       {/* Fixed Chat Widgets */}
 
       <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 flex flex-col-reverse items-end space-y-reverse space-y-2 sm:space-y-reverse sm:space-y-3">
-        
+
         {/* WhatsApp Button */}
         <a href="https://wa.me/9663664548" target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-lg hover:bg-green-600 transition-colors flex items-center justify-center">
 
           <svg className="w-5 h-5 sm:w-7 sm:h-7" fill="currentColor" viewBox="0 0 24 24">
 
-            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm.01 1.67c4.6 0 8.34 3.74 8.34 8.34 0 4.6-3.74 8.34-8.34 8.34-1.58 0-3.11-.44-4.44-1.27l-.32-.2-3.35.88.89-3.27-.22-.33a8.188 8.188 0 01-1.26-4.38c0-4.6 3.74-8.34 8.34-8.34zM8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.12.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.18 1.13.15 1.56.09.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2.02-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01z"/>
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm.01 1.67c4.6 0 8.34 3.74 8.34 8.34 0 4.6-3.74 8.34-8.34 8.34-1.58 0-3.11-.44-4.44-1.27l-.32-.2-3.35.88.89-3.27-.22-.33a8.188 8.188 0 01-1.26-4.38c0-4.6 3.74-8.34 8.34-8.34zM8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.12.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.18 1.13.15 1.56.09.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2.02-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01z" />
 
           </svg>
 
         </a>
 
-        
+
 
         {/* Floating Chat Button */}
-        <div 
-          className={`${isChatOpen ? 'w-72 sm:w-80 h-[500px] rounded-lg' : 'w-10 h-10 sm:w-12 sm:h-12 rounded-full'} bg-white shadow-2xl flex items-center justify-center transition-all duration-300 cursor-pointer hover:bg-gray-100 border border-gray-300`}
+        <div
+          className={`${isChatOpen ? 'w-[calc(100vw-32px)] sm:w-80 h-[70vh] sm:h-[500px] rounded-lg' : 'w-10 h-10 sm:w-12 sm:h-12 rounded-full'} bg-white shadow-2xl flex items-center justify-center transition-all duration-300 cursor-pointer hover:bg-gray-100 border border-gray-300`}
           onClick={() => setIsChatOpen(!isChatOpen)}
         >
 
           {/* White Chat Icon - Hidden when chat is open */}
-          <svg 
-            className={`w-5 h-5 sm:w-7 sm:h-7 text-blue-600 ${isChatOpen ? 'hidden' : 'block'}`} 
-            fill="none" 
-            stroke="currentColor" 
+          <svg
+            className={`w-5 h-5 sm:w-7 sm:h-7 text-blue-600 ${isChatOpen ? 'hidden' : 'block'}`}
+            fill="none"
+            stroke="currentColor"
             strokeWidth="2.5"
             viewBox="0 0 24 24"
           >
@@ -356,14 +356,14 @@ export default function Home() {
 
           </svg>
 
-          
+
 
           {/* Expanded Chat Content */}
           {isChatOpen && (
             <div className="w-full h-full flex flex-col p-3">
               <div className="flex items-center justify-between mb-3">
                 <h3 className="font-semibold text-gray-800 text-sm sm:text-base">Chat with us</h3>
-                <button 
+                <button
                   className="text-gray-600 hover:text-gray-800 cursor-pointer"
                   onClick={(e) => {
                     e.stopPropagation();
@@ -441,11 +441,10 @@ export default function Home() {
               <div className="flex-1 bg-white rounded-lg p-2 sm:p-3 mb-3 overflow-y-auto border border-gray-200 min-h-0">
                 {messages.map((msg, index) => (
                   <div key={index} className={`mb-2 ${msg.sender === 'user' ? 'text-right' : 'text-left'}`}>
-                    <span className={`inline-block px-2 py-1 rounded text-xs sm:text-sm ${
-                      msg.sender === 'user' 
-                        ? 'bg-blue-600 text-white' 
+                    <span className={`inline-block px-2 py-1 rounded text-xs sm:text-sm ${msg.sender === 'user'
+                        ? 'bg-blue-600 text-white'
                         : 'bg-gray-200 text-black'
-                    }`}>
+                      }`}>
                       {msg.text}
                     </span>
                   </div>
@@ -483,7 +482,7 @@ export default function Home() {
 
       </div>
 
-      
+
 
       <main>
 
@@ -519,13 +518,13 @@ export default function Home() {
 
             </AnimatePresence>
 
-            
+
 
             {/* Dark Overlay for Images */}
 
             <div className="absolute inset-0 bg-black/60"></div>
 
-            
+
 
             {/* Light Overlay for Text Readability */}
 
@@ -533,7 +532,7 @@ export default function Home() {
 
           </div>
 
-          
+
 
           {/* Content Overlay */}
 
@@ -545,7 +544,7 @@ export default function Home() {
 
                 <div>
 
-                  <motion.h1 
+                  <motion.h1
 
                     className="text-4xl md:text-6xl font-bold mb-6 font-sans mt-12 bg-gradient-to-r from-red-600 via-blue-600 to-blue-800 bg-clip-text text-transparent"
 
@@ -561,7 +560,7 @@ export default function Home() {
 
                   </motion.h1>
 
-                  <motion.p 
+                  <motion.p
 
                     className="text-xl md:text-2xl mb-12 text-black font-sans font-medium leading-relaxed"
 
@@ -607,23 +606,23 @@ export default function Home() {
 
           <motion.button
 
-              onClick={nextImage}
+            onClick={nextImage}
 
-              className="pointer-events-auto bg-white bg-opacity-20 hover:bg-opacity-30 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-200 cursor-pointer"
+            className="pointer-events-auto bg-white bg-opacity-20 hover:bg-opacity-30 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-200 cursor-pointer"
 
-              whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.1 }}
 
-              whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.9 }}
 
-            >
+          >
 
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7" />
 
-              </svg>
+            </svg>
 
-            </motion.button>
+          </motion.button>
 
           {/* Desktop Image Indicators */}
 
@@ -637,15 +636,13 @@ export default function Home() {
 
                 onClick={() => setCurrentImage(index)}
 
-                className={`w-3 h-3 rounded-full transition-all duration-200 cursor-pointer ${
+                className={`w-3 h-3 rounded-full transition-all duration-200 cursor-pointer ${index === currentImage
 
-                  index === currentImage 
-
-                    ? 'bg-black w-12' 
+                    ? 'bg-black w-12'
 
                     : 'bg-black bg-opacity-50 hover:bg-opacity-75'
 
-                }`}
+                  }`}
 
                 whileHover={{ scale: 1.2 }}
 
@@ -667,7 +664,7 @@ export default function Home() {
 
           </div>
 
-          
+
 
           {/* Desktop Image Info Overlay */}
 
@@ -719,7 +716,7 @@ export default function Home() {
 
             </div>
 
-            
+
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
@@ -741,7 +738,7 @@ export default function Home() {
 
               </div>
 
-              
+
 
               <div className="text-center bg-white p-8 rounded-lg shadow-md">
 
@@ -761,7 +758,7 @@ export default function Home() {
 
               </div>
 
-              
+
 
               <div className="text-center bg-white p-8 rounded-lg shadow-md">
 
@@ -857,7 +854,7 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
 
-              <button 
+              <button
 
                 onClick={() => window.location.href = '/products'}
 
@@ -869,7 +866,7 @@ export default function Home() {
 
               </button>
 
-              <button 
+              <button
 
                 onClick={() => window.location.href = '/contact'}
 
@@ -887,11 +884,11 @@ export default function Home() {
 
         </section>
 
-       
+
 
       </main>
 
-      
+
 
       <Footer />
 

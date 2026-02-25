@@ -5,9 +5,9 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <Navbar />
-      
+
       {/* Hero Video Section */}
-      <div className="relative w-full h-screen min-h-[600px] bg-black">
+      <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-screen min-h-[400px] md:min-h-[600px] bg-black">
         <video
           className="absolute inset-0 w-full h-full object-cover opacity-100"
           autoPlay
@@ -28,10 +28,10 @@ export default function AboutPage() {
           <source src="/aboutvideo.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
-        
+
         {/* Lighter Overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/10 to-transparent"></div>
-        
+
         {/* Hero Content */}
         <div className="relative z-10 h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
           <div className="w-full max-w-7xl text-center sm:text-left">
@@ -46,35 +46,35 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-      
+
       {/* About NR Medicare Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             About NR Medicare
           </h1>
-          
+
           <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-gray-800">
             Innovating for a Healthier Tomorrow
           </h2>
-          
+
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
             <p>
               At NR Medicare, we are a global medical device company dedicated to advancing healthcare excellence through innovative technology and unwavering commitment to quality. We pursue reliable solutions and cutting-edge medical devices to contribute to healthcare in more than 160 countries and regions around the globe.
             </p>
-            
+
             <p>
               Our mission is to reduce patients' difficulties both mentally and physically, while delivering solutions that help solve various challenges in medical settings. We promise to walk alongside healthcare professionals to continue making great contributions to society, now and into the future.
             </p>
-            
+
             <p>
               Through relentless innovation, rigorous quality standards, and deep understanding of patient needs, we strive to create medical devices that transform healthcare delivery and improve lives worldwide.
             </p>
           </div>
-          
-         
+
+
         </div>
-        
+
         {/* Vision & Mission Statement Section */}
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mt-8">
           <div className="text-center mb-12">
@@ -85,7 +85,7 @@ export default function AboutPage() {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Vision & Mission</h2>
           </div>
-          
+
           {/* Vision Statement */}
           <div className="max-w-4xl mx-auto mb-8">
             <h3 className="text-2xl font-semibold text-gray-800 mb-4 text-center">Vision Statement</h3>
@@ -95,7 +95,7 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          
+
           {/* Mission Statement */}
           <div className="max-w-4xl mx-auto">
             <h3 className="text-2xl font-semibold text-gray-800 mb-4 text-center">Mission Statement</h3>
@@ -105,7 +105,7 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          
+
           {/* Mission Pillars */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             <div className="text-center p-6 bg-gray-50 rounded-lg">
@@ -117,7 +117,7 @@ export default function AboutPage() {
               <h3 className="font-semibold text-gray-800 mb-2">Ethical Marketing</h3>
               <p className="text-gray-600 text-sm">Promoting pharmaceutical products with integrity and transparency</p>
             </div>
-            
+
             <div className="text-center p-6 bg-gray-50 rounded-lg">
               <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
                 <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,7 +127,7 @@ export default function AboutPage() {
               <h3 className="font-semibold text-gray-800 mb-2">Partnerships</h3>
               <p className="text-gray-600 text-sm">Building long-term relationships with healthcare professionals</p>
             </div>
-            
+
             <div className="text-center p-6 bg-gray-50 rounded-lg">
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
                 <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,7 +140,7 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-      
+
       <Footer />
     </div>
   );

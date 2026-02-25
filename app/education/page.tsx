@@ -241,27 +241,27 @@ export default function Education() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      
+
       <main>
         {/* Hero Section */}
-        <motion.section 
-          className="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-12 sm:py-16 md:py-20 relative overflow-hidden min-h-[250px] sm:min-h-[300px] md:min-h-[350px]"
+        <motion.section
+          className="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-12 sm:py-16 md:py-20 relative overflow-hidden min-h-[200px] sm:min-h-[250px] md:min-h-[350px]"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           {/* Background Image */}
           <div className="absolute inset-0 opacity-20">
-            <img 
-              src="/desease.png" 
-              alt="Disease Education Background" 
+            <img
+              src="/desease.png"
+              alt="Disease Education Background"
               className="w-full h-full object-cover"
             />
           </div>
-          
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex items-center">
             <div className="text-center w-full">
-              <motion.h1 
+              <motion.h1
                 className="text-3xl md:text-4xl font-bold mb-4"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -269,7 +269,7 @@ export default function Education() {
               >
                 Disease Education
               </motion.h1>
-              <motion.p 
+              <motion.p
                 className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -290,7 +290,7 @@ export default function Education() {
                 Educational resources for understanding and managing various health conditions
               </p>
             </div>
-            
+
             {/* Search Bar */}
             <div className="max-w-2xl mx-auto mb-12">
               <div className="relative">
@@ -318,12 +318,12 @@ export default function Education() {
                 )}
               </div>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <AnimatePresence>
                 {displayedDiseases.map((disease, index) => (
-                  <motion.div 
-                    key={index} 
+                  <motion.div
+                    key={index}
                     className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -334,7 +334,7 @@ export default function Education() {
                     {/* Disease Header */}
                     <div className="bg-gray-100 bg-opacity-80 text-gray-800 p-4">
                       <div className="flex items-center space-x-3">
-                        <motion.div 
+                        <motion.div
                           className="text-3xl"
                           animate={{ rotate: [0, 5, -5, 0] }}
                           transition={{ duration: 4, repeat: Infinity, delay: index * 0.5 }}
@@ -346,11 +346,11 @@ export default function Education() {
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Disease Description */}
                     <div className="p-4">
                       <p className="text-sm text-gray-600 mb-4 leading-relaxed">{disease.description}</p>
-                      
+
                       {/* View Details Button */}
                       <motion.button
                         onClick={() => setSelectedDisease(disease)}
@@ -365,10 +365,10 @@ export default function Education() {
                 ))}
               </AnimatePresence>
             </div>
-            
+
             {/* More Options Button */}
             {hasMoreDiseases && !showMore && (
-              <motion.div 
+              <motion.div
                 className="text-center mt-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -384,9 +384,9 @@ export default function Education() {
                 </motion.button>
               </motion.div>
             )}
-            
+
             {showMore && (
-              <motion.div 
+              <motion.div
                 className="text-center mt-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -402,7 +402,7 @@ export default function Education() {
                 </motion.button>
               </motion.div>
             )}
-            
+
             {filteredDiseases.length === 0 && (
               <div className="text-center py-10">
                 <p className="text-gray-500 text-base">No diseases found matching "{searchTerm}"</p>
@@ -414,188 +414,188 @@ export default function Education() {
         {/* Disease Details Modal */}
         <AnimatePresence>
           {selectedDisease && (
-            <motion.div 
+            <motion.div
               className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <motion.div 
+              <motion.div
                 className="bg-white border border-gray-200 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
                 transition={{ duration: 0.3 }}
               >
-              {/* Modal Header */}
-              <div className="bg-gray-100 bg-opacity-80 text-gray-800 p-4 sticky top-0 z-10 border-b border-gray-200">
-                <div className="flex justify-between items-start">
-                  <div className="flex items-center space-x-3">
-                    <div className="text-3xl">{selectedDisease.icon}</div>
-                    <div>
-                      <h3 className="text-xl font-bold">{selectedDisease.title}</h3>
-                      <p className="text-sm text-gray-600">{selectedDisease.description}</p>
+                {/* Modal Header */}
+                <div className="bg-gray-100 bg-opacity-80 text-gray-800 p-4 sticky top-0 z-10 border-b border-gray-200">
+                  <div className="flex justify-between items-start">
+                    <div className="flex items-center space-x-3">
+                      <div className="text-3xl">{selectedDisease.icon}</div>
+                      <div>
+                        <h3 className="text-xl font-bold">{selectedDisease.title}</h3>
+                        <p className="text-sm text-gray-600">{selectedDisease.description}</p>
+                      </div>
                     </div>
+                    <button
+                      onClick={() => setSelectedDisease(null)}
+                      className="text-gray-600 hover:text-gray-800 transition-colors"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
                   </div>
-                  <button 
-                    onClick={() => setSelectedDisease(null)}
-                    className="text-gray-600 hover:text-gray-800 transition-colors"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
                 </div>
-              </div>
-              
-              {/* Modal Content */}
-              <div className="p-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {/* Types */}
-                  <div className="bg-blue-50 p-3 rounded-lg">
-                    <h4 className="font-semibold text-blue-900 mb-2 flex items-center text-sm">
-                      <span className="text-blue-600 mr-2">🏷️</span> Types
-                    </h4>
-                    <ul className="space-y-1">
-                      {selectedDisease.details.types.map((type: any, idx: any) => (
-                        <li key={idx} className="text-xs text-blue-800 flex items-start">
-                          <span className="text-blue-600 mr-2">•</span>
-                          {type}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  {/* Symptoms */}
-                  <div className="bg-red-50 p-3 rounded-lg">
-                    <h4 className="font-semibold text-red-900 mb-2 flex items-center text-sm">
-                      <span className="text-red-600 mr-2">⚠️</span> Symptoms
-                    </h4>
-                    <ul className="space-y-1">
-                      {selectedDisease.details.symptoms.map((symptom: any, idx: any) => (
-                        <li key={idx} className="text-xs text-red-800 flex items-start">
-                          <span className="text-red-600 mr-2">•</span>
-                          {symptom}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  {/* Prevention */}
-                  <div className="bg-green-50 p-3 rounded-lg">
-                    <h4 className="font-semibold text-green-900 mb-2 flex items-center text-sm">
-                      <span className="text-green-600 mr-2">🛡️</span> Prevention
-                    </h4>
-                    <ul className="space-y-1">
-                      {selectedDisease.details.prevention.map((item: any, idx: any) => (
-                        <li key={idx} className="text-xs text-green-800 flex items-start">
-                          <span className="text-green-600 mr-2">•</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  {/* Treatment */}
-                  <div className="bg-purple-50 p-3 rounded-lg">
-                    <h4 className="font-semibold text-purple-900 mb-2 flex items-center text-sm">
-                      <span className="text-purple-600 mr-2">💊</span> Treatment
-                    </h4>
-                    <ul className="space-y-1">
-                      {selectedDisease.details.treatment.map((item: any, idx: any) => (
-                        <li key={idx} className="text-xs text-purple-800 flex items-start">
-                          <span className="text-purple-600 mr-2">•</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  {/* Additional Info */}
-                  {selectedDisease.details.complications && (
-                    <div className="bg-orange-50 p-3 rounded-lg">
-                      <h4 className="font-semibold text-orange-900 mb-2 flex items-center text-sm">
-                        <span className="text-orange-600 mr-2">⚡</span> Complications
+
+                {/* Modal Content */}
+                <div className="p-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {/* Types */}
+                    <div className="bg-blue-50 p-3 rounded-lg">
+                      <h4 className="font-semibold text-blue-900 mb-2 flex items-center text-sm">
+                        <span className="text-blue-600 mr-2">🏷️</span> Types
                       </h4>
                       <ul className="space-y-1">
-                        {selectedDisease.details.complications.map((item: any, idx: any) => (
-                          <li key={idx} className="text-xs text-orange-800 flex items-start">
-                            <span className="text-orange-600 mr-2">•</span>
+                        {selectedDisease.details.types.map((type: any, idx: any) => (
+                          <li key={idx} className="text-xs text-blue-800 flex items-start">
+                            <span className="text-blue-600 mr-2">•</span>
+                            {type}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Symptoms */}
+                    <div className="bg-red-50 p-3 rounded-lg">
+                      <h4 className="font-semibold text-red-900 mb-2 flex items-center text-sm">
+                        <span className="text-red-600 mr-2">⚠️</span> Symptoms
+                      </h4>
+                      <ul className="space-y-1">
+                        {selectedDisease.details.symptoms.map((symptom: any, idx: any) => (
+                          <li key={idx} className="text-xs text-red-800 flex items-start">
+                            <span className="text-red-600 mr-2">•</span>
+                            {symptom}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Prevention */}
+                    <div className="bg-green-50 p-3 rounded-lg">
+                      <h4 className="font-semibold text-green-900 mb-2 flex items-center text-sm">
+                        <span className="text-green-600 mr-2">🛡️</span> Prevention
+                      </h4>
+                      <ul className="space-y-1">
+                        {selectedDisease.details.prevention.map((item: any, idx: any) => (
+                          <li key={idx} className="text-xs text-green-800 flex items-start">
+                            <span className="text-green-600 mr-2">•</span>
                             {item}
                           </li>
                         ))}
                       </ul>
                     </div>
-                  )}
-                  
-                  {selectedDisease.details.riskFactors && (
-                    <div className="bg-indigo-50 p-3 rounded-lg">
-                      <h4 className="font-semibold text-indigo-900 mb-2 flex items-center text-sm">
-                        <span className="text-indigo-600 mr-2">🎯</span> Risk Factors
+
+                    {/* Treatment */}
+                    <div className="bg-purple-50 p-3 rounded-lg">
+                      <h4 className="font-semibold text-purple-900 mb-2 flex items-center text-sm">
+                        <span className="text-purple-600 mr-2">💊</span> Treatment
                       </h4>
                       <ul className="space-y-1">
-                        {selectedDisease.details.riskFactors.map((item: any, idx: any) => (
-                          <li key={idx} className="text-xs text-indigo-800 flex items-start">
-                            <span className="text-indigo-600 mr-2">•</span>
+                        {selectedDisease.details.treatment.map((item: any, idx: any) => (
+                          <li key={idx} className="text-xs text-purple-800 flex items-start">
+                            <span className="text-purple-600 mr-2">•</span>
                             {item}
                           </li>
                         ))}
                       </ul>
                     </div>
-                  )}
-                  
-                  {selectedDisease.details.triggers && (
-                    <div className="bg-yellow-50 p-3 rounded-lg">
-                      <h4 className="font-semibold text-yellow-900 mb-2 flex items-center text-sm">
-                        <span className="text-yellow-600 mr-2">🔥</span> Triggers
-                      </h4>
-                      <ul className="space-y-1">
-                        {selectedDisease.details.triggers.map((item: any, idx: any) => (
-                          <li key={idx} className="text-xs text-yellow-800 flex items-start">
-                            <span className="text-yellow-600 mr-2">•</span>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  
-                  {selectedDisease.details.screening && (
-                    <div className="bg-teal-50 p-3 rounded-lg">
-                      <h4 className="font-semibold text-teal-900 mb-2 flex items-center text-sm">
-                        <span className="text-teal-600 mr-2">🔍</span> Screening
-                      </h4>
-                      <ul className="space-y-1">
-                        {selectedDisease.details.screening.map((item: any, idx: any) => (
-                          <li key={idx} className="text-xs text-teal-800 flex items-start">
-                            <span className="text-teal-600 mr-2">•</span>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+
+                    {/* Additional Info */}
+                    {selectedDisease.details.complications && (
+                      <div className="bg-orange-50 p-3 rounded-lg">
+                        <h4 className="font-semibold text-orange-900 mb-2 flex items-center text-sm">
+                          <span className="text-orange-600 mr-2">⚡</span> Complications
+                        </h4>
+                        <ul className="space-y-1">
+                          {selectedDisease.details.complications.map((item: any, idx: any) => (
+                            <li key={idx} className="text-xs text-orange-800 flex items-start">
+                              <span className="text-orange-600 mr-2">•</span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {selectedDisease.details.riskFactors && (
+                      <div className="bg-indigo-50 p-3 rounded-lg">
+                        <h4 className="font-semibold text-indigo-900 mb-2 flex items-center text-sm">
+                          <span className="text-indigo-600 mr-2">🎯</span> Risk Factors
+                        </h4>
+                        <ul className="space-y-1">
+                          {selectedDisease.details.riskFactors.map((item: any, idx: any) => (
+                            <li key={idx} className="text-xs text-indigo-800 flex items-start">
+                              <span className="text-indigo-600 mr-2">•</span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {selectedDisease.details.triggers && (
+                      <div className="bg-yellow-50 p-3 rounded-lg">
+                        <h4 className="font-semibold text-yellow-900 mb-2 flex items-center text-sm">
+                          <span className="text-yellow-600 mr-2">🔥</span> Triggers
+                        </h4>
+                        <ul className="space-y-1">
+                          {selectedDisease.details.triggers.map((item: any, idx: any) => (
+                            <li key={idx} className="text-xs text-yellow-800 flex items-start">
+                              <span className="text-yellow-600 mr-2">•</span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {selectedDisease.details.screening && (
+                      <div className="bg-teal-50 p-3 rounded-lg">
+                        <h4 className="font-semibold text-teal-900 mb-2 flex items-center text-sm">
+                          <span className="text-teal-600 mr-2">🔍</span> Screening
+                        </h4>
+                        <ul className="space-y-1">
+                          {selectedDisease.details.screening.map((item: any, idx: any) => (
+                            <li key={idx} className="text-xs text-teal-800 flex items-start">
+                              <span className="text-teal-600 mr-2">•</span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="mt-6 flex justify-end">
+                    <motion.button
+                      onClick={() => setSelectedDisease(null)}
+                      className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors text-sm"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Close
+                    </motion.button>
+                  </div>
                 </div>
-                
-                <div className="mt-6 flex justify-end">
-                  <motion.button 
-                    onClick={() => setSelectedDisease(null)}
-                    className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors text-sm"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Close
-                  </motion.button>
-                </div>
-              </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
           )}
         </AnimatePresence>
 
-        </main>
-      
+      </main>
+
       <Footer />
     </div>
   );
