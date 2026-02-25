@@ -61,7 +61,7 @@ export default function Logo({ size = 'md', variant = 'dark', className = '' }: 
             fill={currentColors.primary}
             rx="4"
           />
-          
+
           {/* NR Text inside cross */}
           <text
             x="50"
@@ -75,7 +75,7 @@ export default function Logo({ size = 'md', variant = 'dark', className = '' }: 
           >
             NR
           </text>
-          
+
           {/* Circle border */}
           <circle
             cx="50"
@@ -85,7 +85,7 @@ export default function Logo({ size = 'md', variant = 'dark', className = '' }: 
             strokeWidth="3"
             fill="none"
           />
-          
+
           {/* Small medical symbols */}
           <circle cx="25" cy="25" r="3" fill={currentColors.secondary} />
           <circle cx="75" cy="25" r="3" fill={currentColors.secondary} />
