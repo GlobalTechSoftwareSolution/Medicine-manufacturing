@@ -18,12 +18,12 @@ export default function Navbar() {
     <nav className="bg-white shadow-lg sticky top-0 z-50 border-b-2 border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 md:h-20">
-          <div className="flex items-center min-w-0">
-            <Link href="/" className="flex-shrink-0 flex items-center space-x-2 sm:space-x-4 group cursor-pointer max-w-full">
-              <div className="w-20 h-10 sm:w-24 sm:h-12 md:w-32 md:h-16 flex-shrink-0 overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl rounded-lg">
+          <div className="flex items-center min-w-0 flex-1">
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group cursor-pointer max-w-full overflow-hidden">
+              <div className="w-12 h-8 sm:w-16 sm:h-10 md:w-24 md:h-12 flex-shrink-0 overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg rounded-md">
                 <img src="/logo.jpg" alt="NR Medicare Logo" className="w-full h-full object-contain" />
               </div>
-              <span className="text-lg sm:text-2xl font-bold font-sans bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 truncate">
+              <span className="text-base sm:text-xl md:text-2xl font-bold font-sans bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 truncate">
                 NR Medicare
               </span>
             </Link>

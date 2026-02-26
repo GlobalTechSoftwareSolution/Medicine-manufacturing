@@ -339,7 +339,7 @@ export default function Home() {
 
         {/* Floating Chat Button */}
         <div
-          className={`${isChatOpen ? 'w-[calc(100vw-32px)] sm:w-80 h-[70vh] sm:h-[500px] rounded-lg' : 'w-10 h-10 sm:w-12 sm:h-12 rounded-full'} bg-white shadow-2xl flex items-center justify-center transition-all duration-300 cursor-pointer hover:bg-gray-100 border border-gray-300`}
+          className={`${isChatOpen ? 'w-[calc(100vw-2rem)] sm:w-80 h-[75vh] sm:h-[500px] rounded-xl' : 'w-12 h-12 rounded-full'} bg-white shadow-2xl flex items-center justify-center transition-all duration-300 cursor-pointer hover:bg-gray-50 border border-gray-200`}
           onClick={() => setIsChatOpen(!isChatOpen)}
         >
 
@@ -442,8 +442,8 @@ export default function Home() {
                 {messages.map((msg, index) => (
                   <div key={index} className={`mb-2 ${msg.sender === 'user' ? 'text-right' : 'text-left'}`}>
                     <span className={`inline-block px-2 py-1 rounded text-xs sm:text-sm ${msg.sender === 'user'
-                        ? 'bg-blue-600 text-white'
-                        : 'bg-gray-200 text-black'
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-gray-200 text-black'
                       }`}>
                       {msg.text}
                     </span>
@@ -542,40 +542,23 @@ export default function Home() {
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-                <div>
-
+                <div className="text-center lg:text-left">
                   <motion.h1
-
-                    className="text-4xl md:text-6xl font-bold mb-6 font-sans mt-12 bg-gradient-to-r from-red-600 via-blue-600 to-blue-800 bg-clip-text text-transparent"
-
+                    className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 font-sans mt-8 sm:mt-12 bg-gradient-to-r from-red-600 via-blue-600 to-blue-800 bg-clip-text text-transparent"
                     initial={{ opacity: 0, x: -50 }}
-
                     animate={{ opacity: 1, x: 0 }}
-
                     transition={{ duration: 1, delay: 0.5 }}
-
                   >
-
                     NR Medicare
-
                   </motion.h1>
-
                   <motion.p
-
-                    className="text-xl md:text-2xl mb-12 text-black font-sans font-medium leading-relaxed"
-
+                    className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-black font-sans font-medium leading-relaxed"
                     initial={{ opacity: 0, x: -50 }}
-
                     animate={{ opacity: 1, x: 0 }}
-
                     transition={{ duration: 1, delay: 0.8 }}
-
                   >
-
                     NR Medicare is a pharmaceutical marketing company committed to delivering high-quality, affordable medicines. We focus on quality, compliance, and innovation to meet healthcare needs.
-
                   </motion.p>
-
                 </div>
 
               </div>
@@ -584,45 +567,6 @@ export default function Home() {
 
           </div>
 
-          <motion.button
-
-            onClick={prevImage}
-
-            className="pointer-events-auto bg-white bg-opacity-20 hover:bg-opacity-30 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-200"
-
-            whileHover={{ scale: 1.1 }}
-
-            whileTap={{ scale: 0.9 }}
-
-          >
-
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7" />
-
-            </svg>
-
-          </motion.button>
-
-          <motion.button
-
-            onClick={nextImage}
-
-            className="pointer-events-auto bg-white bg-opacity-20 hover:bg-opacity-30 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-200 cursor-pointer"
-
-            whileHover={{ scale: 1.1 }}
-
-            whileTap={{ scale: 0.9 }}
-
-          >
-
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7" />
-
-            </svg>
-
-          </motion.button>
 
           {/* Desktop Image Indicators */}
 
@@ -638,9 +582,9 @@ export default function Home() {
 
                 className={`w-3 h-3 rounded-full transition-all duration-200 cursor-pointer ${index === currentImage
 
-                    ? 'bg-black w-12'
+                  ? 'bg-black w-12'
 
-                    : 'bg-black bg-opacity-50 hover:bg-opacity-75'
+                  : 'bg-black bg-opacity-50 hover:bg-opacity-75'
 
                   }`}
 

@@ -134,7 +134,7 @@ export default function Contact() {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-base sm:text-lg font-bold text-black mb-1">Business Hours</h3>
-                      <p className="text-sm sm:text-base text-gray-800">Monday - Friday: 9:00 AM - 6:00 PM EST<br />Saturday: 10:00 AM - 2:00 PM EST<br />Sunday: Closed</p>
+                      <p className="text-sm sm:text-base text-gray-800">Monday - Friday: 9:00 AM - 6:00 PM IST<br />Saturday: 10:00 AM - 2:00 PM IST<br />Sunday: Closed</p>
                     </div>
                   </div>
                 </div>

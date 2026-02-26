@@ -260,10 +260,8 @@ export default function ProductsPage() {
 
           <h1 className="text-4xl font-extrabold text-gray-900 mb-6">Our Products</h1>
 
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed text-justify">
-
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed text-left md:text-justify">
             NR Medicare offers a comprehensive range of high-quality pharmaceutical products developed to meet essential healthcare needs. Our portfolio includes reliable formulations and active pharmaceutical ingredients (APIs) manufactured with a strong focus on safety, consistency, and regulatory compliance.
-
           </p>
 
         </div>

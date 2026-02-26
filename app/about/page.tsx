@@ -36,7 +36,7 @@ export default function AboutPage() {
         <div className="relative z-10 h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
           <div className="w-full max-w-7xl text-center sm:text-left">
             <div className="text-white">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 text-blue-400 font-sans drop-shadow-lg">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-blue-400 font-sans drop-shadow-lg leading-tight">
                 About NR Medicare
               </h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 max-w-full sm:max-w-3xl text-white font-sans drop-shadow-lg">
@@ -50,7 +50,7 @@ export default function AboutPage() {
       {/* About NR Medicare Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent px-2">
             About NR Medicare
           </h1>
 

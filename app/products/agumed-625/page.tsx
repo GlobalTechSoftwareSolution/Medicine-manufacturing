@@ -22,7 +22,7 @@ export default function Agumed625Page() {
 
       <Navbar />
 
-      
+
 
       {/* Back Button */}
 
@@ -30,7 +30,7 @@ export default function Agumed625Page() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
 
-          <button 
+          <button
 
             onClick={() => router.push('/products')}
 
@@ -66,10 +66,8 @@ export default function Agumed625Page() {
 
             <p className="text-lg text-red-700 mb-8">Advanced Antibiotic Therapy</p>
 
-            <div className="w-32 h-32 mx-auto mb-8 bg-white rounded-lg shadow-lg p-4 flex items-center justify-center">
-
-              <img src="/M5.png" alt="AGUMED-625" className="w-full h-full object-cover" />
-
+            <div className="w-full max-w-[200px] aspect-square mx-auto mb-8 bg-white rounded-xl shadow-lg p-4 flex items-center justify-center overflow-hidden">
+              <img src="/M5.png" alt="AGUMED-625" className="w-full h-full object-contain" />
             </div>
 
           </div>
@@ -96,7 +94,7 @@ export default function Agumed625Page() {
 
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Product Information</h2>
 
-                
+
 
                 <div className="space-y-6">
 
@@ -106,7 +104,7 @@ export default function Agumed625Page() {
 
                     <p className="text-gray-700 leading-relaxed">
 
-                      Amoxicillin 500mg with Clavulanic Acid 125mg in a fixed-dose combination. 
+                      Amoxicillin 500mg with Clavulanic Acid 125mg in a fixed-dose combination.
 
                       Broad-spectrum antibiotic for effective treatment of bacterial infections.
 
@@ -284,7 +282,7 @@ export default function Agumed625Page() {
 
           <div className="mt-12 text-center">
 
-            <button 
+            <button
 
               onClick={() => router.push('/products')}
 

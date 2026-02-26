@@ -312,7 +312,7 @@ export default function IndividualEducationPage() {
       <div className="relative bg-gradient-to-r from-teal-50 to-teal-100 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <motion.h1 
+            <motion.h1
               className="text-4xl font-bold text-teal-900 mb-4"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -320,7 +320,7 @@ export default function IndividualEducationPage() {
             >
               Individual Education
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="text-lg text-teal-700 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -328,7 +328,7 @@ export default function IndividualEducationPage() {
             >
               Comprehensive Medical Knowledge Base
             </motion.p>
-            <motion.div 
+            <motion.div
               className="w-32 h-32 mx-auto mb-8 rounded-lg shadow-lg overflow-hidden"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -349,7 +349,7 @@ export default function IndividualEducationPage() {
       {/* Category Selection */}
       <div className="bg-gray-50 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-2xl font-bold text-gray-900 mb-6 text-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -357,23 +357,22 @@ export default function IndividualEducationPage() {
           >
             Choose Education Category
           </motion.h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {categories.map((category, index) => (
               <motion.button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`p-4 rounded-lg border-2 transition-all duration-300 ${
-                  selectedCategory === category.id
+                className={`p-4 rounded-lg border-2 transition-all duration-300 ${selectedCategory === category.id
                     ? `border-${category.color}-500 bg-${category.color}-50 shadow-lg`
                     : `border-gray-200 bg-white hover:border-${category.color}-300 hover:bg-${category.color}-50 shadow-md`
-                }`}
+                  }`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <motion.div 
+                <motion.div
                   className="text-3xl mb-2"
                   animate={{ y: [0, -3, 0] }}
                   transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
@@ -391,7 +390,7 @@ export default function IndividualEducationPage() {
       {/* Content Display */}
       <div className="py-12 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold text-gray-900 mb-8 text-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -399,11 +398,11 @@ export default function IndividualEducationPage() {
           >
             {currentContent.title}
           </motion.h2>
-          
+
           <div className="space-y-8">
             <AnimatePresence mode="wait">
               {currentContent.sections.map((section, index) => (
-                <motion.div 
+                <motion.div
                   key={`${selectedCategory}-${index}`}
                   className="bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
@@ -415,14 +414,14 @@ export default function IndividualEducationPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-4">{section.title}</h3>
                   <div className="space-y-3">
                     {section.content.map((item, itemIndex) => (
-                      <motion.div 
-                        key={itemIndex} 
+                      <motion.div
+                        key={itemIndex}
                         className="flex items-start"
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.4, delay: index * 0.1 + itemIndex * 0.05 }}
                       >
-                        <motion.span 
+                        <motion.span
                           className="text-teal-600 mr-3 mt-1"
                           initial={{ scale: 0, rotate: -45 }}
                           animate={{ scale: 1, rotate: 0 }}

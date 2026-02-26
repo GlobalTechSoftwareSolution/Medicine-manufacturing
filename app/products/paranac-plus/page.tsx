@@ -10,11 +10,11 @@ export default function ParanacPlusPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      
+
       {/* Back Button */}
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <button 
+          <button
             onClick={() => router.push('/products')}
             className="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-200"
           >
@@ -32,8 +32,8 @@ export default function ParanacPlusPage() {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-blue-900 mb-4">PARANAC-PLUS</h1>
             <p className="text-lg text-blue-700 mb-8">Advanced Pain Relief Formula</p>
-            <div className="w-32 h-32 mx-auto mb-8 rounded-lg shadow-lg overflow-hidden">
-              <img src="/M1.jpg" alt="PARANAC-PLUS" className="w-full h-full object-cover" />
+            <div className="w-full max-w-[200px] aspect-square mx-auto mb-8 bg-white rounded-xl shadow-lg p-4 flex items-center justify-center overflow-hidden">
+              <img src="/M1.jpg" alt="PARANAC-PLUS" className="w-full h-full object-contain" />
             </div>
           </div>
         </div>
@@ -47,12 +47,12 @@ export default function ParanacPlusPage() {
             <div className="space-y-8">
               <div className="bg-gray-50 rounded-lg p-6">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Product Information</h2>
-                
+
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-semibold text-blue-600 mb-2">Composition</h3>
                     <p className="text-gray-700 leading-relaxed">
-                      Advanced paracetamol formulation with enhanced bioavailability for rapid pain relief and fever reduction. 
+                      Advanced paracetamol formulation with enhanced bioavailability for rapid pain relief and fever reduction.
                       Contains 500mg of paracetamol per tablet with proprietary absorption enhancers.
                     </p>
                   </div>
@@ -69,7 +69,7 @@ export default function ParanacPlusPage() {
                     </ul>
                   </div>
 
-                                  </div>
+                </div>
               </div>
 
               {/* Safety Information */}
@@ -137,7 +137,7 @@ export default function ParanacPlusPage() {
 
           {/* Back Button */}
           <div className="mt-12 text-center">
-            <button 
+            <button
               onClick={() => router.push('/products')}
               className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 font-semibold"
             >
