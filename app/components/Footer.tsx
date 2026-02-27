@@ -9,7 +9,6 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2 lg:col-span-2 text-center md:text-left">
             <h3 className="text-2xl font-bold text-blue-400 mb-4">NR Medicare</h3>
-            <p className="text-gray-400">&copy; {new Date().getFullYear()} NR Medicare. All rights reserved.</p>
             <p className="text-gray-200 mb-4 font-medium">
               Leading the pharmaceutical industry with innovative medicine marketing solutions,
               committed to quality, safety, and patient well-being.

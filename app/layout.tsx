@@ -14,10 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "NR Medicare",
-  description: "Pharmaceutical Excellence - Quality Healthcare Solutions",
+  description: "Pharmaceutical Excellence - Quality Healthcare Solutions. NR Medicare is committed to delivering high-quality, affordable medicines.",
   icons: {
-    icon: '/logo.jpg',
-    apple: '/logo.jpg',
+    icon: '/logo-circle.png',
+    shortcut: '/logo-circle.png',
+    apple: '/logo-circle.png',
   }
 };
 

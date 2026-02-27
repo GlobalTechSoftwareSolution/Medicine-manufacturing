@@ -264,19 +264,24 @@ export default function CareersPage() {
 
     if (name && email && phone && selectedJob) {
       try {
+        const formData = new FormData();
+        formData.append('name', name as string);
+        formData.append('email', email as string);
+        formData.append('phone', phone as string);
+        formData.append('experience', experience as string || '');
+        formData.append('company', selectedJob.department + ' - ' + selectedJob.location);
+        formData.append('message', `Job Application for: ${selectedJob.title}\n\nDepartment: ${selectedJob.department}\nLocation: ${selectedJob.location}\nExperience: ${experience}\n\nApplicant Details:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nApplied via NR Medicare Careers Page`);
+
+        const resumeFile = (form.querySelector('input[name="resume"]') as HTMLInputElement)?.files?.[0];
+        if (resumeFile) {
+          formData.append('resume', resumeFile);
+        }
+
         // Send email using the same API as contact form
         const response = await fetch('/api/send-email', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name: name,
-            email: email,
-            phone: phone,
-            company: selectedJob.department + ' - ' + selectedJob.location,
-            message: `Job Application for: ${selectedJob.title}\n\nDepartment: ${selectedJob.department}\nLocation: ${selectedJob.location}\nExperience: ${experience}\n\nApplicant Details:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nApplied via NR Medicare Careers Page`
-          }),
+          // Don't set Content-Type header when sending FormData; browser sets it with boundary
+          body: formData,
         });
 
         if (response.ok) {
@@ -1048,6 +1053,8 @@ export default function CareersPage() {
                 <input
 
                   type="file"
+
+                  name="resume"
 
                   accept=".pdf,.doc,.docx"
 

@@ -15,8 +15,26 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const body = await request.json();
-    const { name, email, phone, company, message } = body;
+    let name, email, phone, company, message, resumeFile;
+
+    const contentType = request.headers.get('content-type') || '';
+
+    if (contentType.includes('multipart/form-data')) {
+      const formData = await request.formData();
+      name = formData.get('name') as string;
+      email = formData.get('email') as string;
+      phone = formData.get('phone') as string;
+      company = formData.get('company') as string;
+      message = formData.get('message') as string;
+      resumeFile = formData.get('resume') as File | null;
+    } else {
+      const body = await request.json();
+      name = body.name;
+      email = body.email;
+      phone = body.phone;
+      company = body.company;
+      message = body.message;
+    }
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -35,15 +53,27 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Prepare attachments if resume exists
+    const attachments = [];
+    if (resumeFile && resumeFile instanceof File) {
+      const bytes = await resumeFile.arrayBuffer();
+      const buffer = Buffer.from(bytes);
+      attachments.push({
+        filename: resumeFile.name,
+        content: buffer,
+      });
+    }
+
     // Create HTML email content
     const htmlContent = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #1e40af;">New Contact Form Submission</h2>
+        <h2 style="color: #1e40af;">${resumeFile ? 'New Job Application' : 'New Contact Form Submission'}</h2>
         <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-          <p><strong>Company:</strong> ${company || 'Not provided'}</p>
+          <p><strong>${resumeFile ? 'Department/Location' : 'Company'}:</strong> ${company || 'Not provided'}</p>
+          ${resumeFile ? `<p><strong>Resume:</strong> Attached (${resumeFile.name})</p>` : ''}
         </div>
         <div style="margin: 20px 0;">
           <h3 style="color: #374151;">Message:</h3>
@@ -51,7 +81,7 @@ export async function POST(request: NextRequest) {
         </div>
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
           <p style="color: #6b7280; font-size: 12px;">
-            This message was sent from the contact form on your website.
+            This message was sent from the ${resumeFile ? 'Careers' : 'Contact'} form on your website.
           </p>
         </div>
       </div>
@@ -61,15 +91,16 @@ export async function POST(request: NextRequest) {
     const { data, error } = await resend.emails.send({
       from: 'info@nrmedicare.com',
       to: 'info@nrmedicare.com',
-      subject: `New Contact Form Submission from ${name}`,
+      subject: resumeFile ? `New Job Application from ${name}` : `New Contact Form Submission from ${name}`,
       html: htmlContent,
-      replyTo: email, // Allow replying directly to the sender
+      replyTo: email,
+      attachments: attachments.length > 0 ? attachments : undefined,
     });
 
     if (error) {
       console.error('Resend API error:', error);
       let errorMessage = 'Failed to send email';
-      
+
       if (error.statusCode === 422) {
         errorMessage = 'Invalid email format. Please check your email address.';
       } else if (error.statusCode === 401) {
@@ -77,7 +108,7 @@ export async function POST(request: NextRequest) {
       } else if (error.statusCode === 429) {
         errorMessage = 'Too many requests. Please try again later.';
       }
-      
+
       return NextResponse.json(
         { error: errorMessage },
         { status: 500 }
